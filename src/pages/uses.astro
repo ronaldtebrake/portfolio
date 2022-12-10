@@ -1,0 +1,56 @@
+---
+import ToolSection from '@/components/ToolSection.astro';
+import Tool from '@/components/Tool.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const title = 'Uses';
+const description = 'All the tools I use for building, creating, inspiration and more.';
+const permalink = `${Astro.site.href}uses`;
+const current = 'uses';
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current={current}>
+    <div class="w-full container mx-auto py-12 md:py-24 px-4">
+        <header class="mx-auto">
+            <h1 class="text-4xl font-bold sm:text-5xl">Software I use, gadgets I love, and other things I recommend.</h1>
+            <p class="mt-6 text-base">I get asked a lot about the things I use to build software, stay productive, 
+                or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. 
+                Here’s a big list of all of my favorite stuff.
+            </p>
+        </header>
+        <div class="mt-16 sm:mt-20">
+            <div class="space-y-20">
+                <ToolSection title="Hardware">
+                    <Tool title="Macbook Pro">
+                        I was using an Intel-based 16” MacBook Pro prior to this and the difference is night and day. I’ve never heard the fans turn on a single time, even under the incredibly heavy loads I put it through with our various launch simulations.    
+                    </Tool>
+                </ToolSection>
+                <ToolSection title="Development">
+                    <Tool title="Editor">
+                        <p>VSCode</p>
+                        <p>PHPStorm</p>
+                        <p>Sublime Text</p>
+                    </Tool>
+                </ToolSection>
+                <ToolSection title="Website">
+                    <Tool title="Components">
+                        <p>Shuffle - Shuffle.dev</p>
+                        <p>TailwindUI - https://tailwindui.com/</p>
+                        <p>shadcn/ui - https://ui.shadcn.com/</p>
+                        <p>Stone Astro Template - https://astro.build/themes/details/stone/</p>
+                    </Tool>
+                    <Tool title="Stack">
+                        <p>Astro</p>
+                        <p>TailwindCSS</p>
+                    </Tool>
+                    <Tool title="Hosting">
+                        Vercel
+                    </Tool>
+                    <Tool title="Analytics">
+                        https://usefathom.com
+                    </Tool>
+                </ToolSection>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

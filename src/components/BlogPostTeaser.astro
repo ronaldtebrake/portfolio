@@ -1,0 +1,39 @@
+---
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, url, pubDate, category } = Astro.props;
+
+---
+
+
+<article>
+  <a class="group block mb-8" href={url} title="{title}">
+    <div class="flex items-center mb-3">
+      <span class="font-medium text-sm text-coolGray-600">
+        <time datetime={pubDate} class="flex-none min-w-[60px]">
+          {new Date(pubDate).toLocaleDateString('en-us', {
+              month: 'short',
+              day: 'numeric',
+          })}
+        </time>
+      </span>
+      <span class="inline-block mx-4">
+        <svg width="3" height="3" viewbox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-primary-600 dark:fill-primary-600">
+          <path d="M0.896 1.772C0.896 1.632 0.924 1.50133 0.98 1.38C1.036 1.25867 1.11067 1.15133 1.204 1.058C1.30667 0.955333 1.41867 0.876 1.54 0.82C1.67067 0.764 1.806 0.736 1.946 0.736C2.086 0.736 2.21667 0.764 2.338 0.82C2.46867 0.876 2.58067 0.955333 2.674 1.058C2.77667 1.15133 2.856 1.25867 2.912 1.38C2.968 1.50133 2.996 1.632 2.996 1.772C2.996 2.052 2.89333 2.29933 2.688 2.514C2.48267 2.72867 2.23533 2.836 1.946 2.836C1.65667 2.836 1.40933 2.72867 1.204 2.514C0.998667 2.29933 0.896 2.052 0.896 1.772Z" fill="currentColor"></path>
+        </svg>
+      </span>
+      <span class="font-medium text-sm text-coolGray-600 uppercase">{category}</span>
+    </div>
+    <div class="flex items-center justify-between pb-8 border-b border-black dark:border-white">
+      <div class="mr-10 xl:mr-6">
+        <h3 class="text-3xl md:text-4xl tracking-tight">{title}</h3>
+      </div>
+      <span class="group-hover:rotate-45 transform transition duration-100">
+        <svg width="33" height="33" viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+          <path d="M30 3L3 30" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M30 27.758V3H5.24196" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+</article>

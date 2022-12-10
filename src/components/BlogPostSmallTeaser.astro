@@ -1,0 +1,32 @@
+---
+type Props = CollectionEntry<'blog'>['data'];
+
+import { Image } from 'astro:assets';
+
+const { title, url, pubDate, heroImage, category, description } = Astro.props;
+
+---
+
+<div class="w-full md:w-1/2 px-4 sm:pb-4">
+  <a class="group block" href={url}>
+    <div class="relative mb-6 rounded-4xl overflow-hidden">
+      <Image src={heroImage} alt="" class="block w-full h-72 object-cover" />
+      <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10', category]}></div>
+    </div>
+    <div class="max-w-lg">
+      <div class="grid gap-1 grid-cols-4 text-sm mb-3">
+        <time datetime={pubDate} class="flex-auto min-w-[60px]">
+          {new Date(pubDate).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+          })}
+        </time>
+        <span class="uppercase">{category}</span>
+      </div>
+      <h2 class="max-w-xs md:max-w-md text-3xl sm:text-4xl tracking-tight mb-6 group-hover:underline">{title}</h2>
+      <p class="text-xl text-coolGray-600">{description}</p>
+    </div>
+  </a>
+  <hr class="h-px md:h-0 my-6 bg-coolGray-200 border-0">
+</div>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/config';
+const permalink = Astro.site.href;
+
+// Use the v2 getCollection to fetch all blog posts, and then sort them by date.
+import { getCollection } from 'astro:content';
+import BlogPostSmallTeaser from '@/components/BlogPostSmallTeaser.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} permalink={permalink}>
+  
+  <Hero />
+
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="flex gap-4 items-center mb-8">
+        <h1 class="font-heading text-6xl sm:text-8xl md:text-10xl tracking-tighter mb-20">Posts</h1>
+      </div>
+      
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full lg:w-3/12 xl:w-4/12 px-4 mb-16 lg:mb-0">
+          <div class="max-w-xs">
+            <p class="text-xl text-coolGray-600 mb-10">Curious to read more on what I'm working on or experimenting with?</p>
+            <a class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black dark:border-white" href="/blog">
+              <span class="mr-4">See all posts</span>
+              <span class="group-hover:rotate-45 transform transition duration-100">
+                <svg width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                  <path d="M9.5 1.5L1.5 9.5" stroke="currentColor" stroke-width="1.5"></path>
+                  <path d="M9.5 8.83571V1.5H2.16429" stroke="currentColor" stroke-width="1.5"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:w-9/12 xl:w-8/12 px-4">
+          <div class="flex flex-wrap -mx-4">
+            {
+              posts.map((post, index) => index < 2 && (
+                  <BlogPostSmallTeaser url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category}, heroImage={post.data.heroImage}, description={post.data.description} />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

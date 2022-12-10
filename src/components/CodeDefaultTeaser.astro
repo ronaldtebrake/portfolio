@@ -1,0 +1,61 @@
+---
+type Props = CollectionEntry<'blog'>['data'];
+
+import { Image } from 'astro:assets';
+
+const { title, url, pubDate, heroImage, description, category } = Astro.props;
+
+---
+
+<div class="bg-primary-500/10 dark:bg-primary-600 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
+<pre class="language-css dark:bg-primary-900 bg-primary-900" tabindex="0" id="featured">
+<code class="language-css"><span class="token selector">#default-image</span> <span class="token punctuation">{'{'}</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">{'}'}</span></code>
+</pre>
+
+</div>
+<style>
+    pre {
+        font-weight: bold;
+        color: hsl(334, 7%, 95%);
+
+        padding: 2rem;
+        border-radius: 1rem;
+
+        position: relative;
+
+        transform-style: preserve-3d;
+        transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+    }
+</style>
+
+<script>
+    const pre = document.querySelector("pre");
+
+    document.addEventListener("mousemove", (e) => {
+        rotateElement(e, pre);
+    });
+
+    function rotateElement(event, element) {
+        // get mouse position
+        const x = event.clientX;
+        const y = event.clientY;
+        // console.log(x, y)
+
+        // find the middle
+        const middleX = window.innerWidth / 2;
+        const middleY = window.innerHeight / 2;
+        // console.log(middleX, middleY)
+
+        // get offset from middle as a percentage
+        // and tone it down a little
+        const offsetX = ((x - middleX) / middleX) * 45;
+        const offsetY = ((y - middleY) / middleY) * 45;
+        // console.log(offsetX, offsetY);
+
+        // set rotation
+        element.style.setProperty("--rotateX", offsetX + "deg");
+        element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+    }
+</script>

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const title = 'Illustrations';
+const description = 'A peak in to my illustrations.';
+const permalink = `${Astro.site.href}illustrations`;
+const current = 'illustrations';
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current={current}>
+    <section class="py-6 md:py-6 bg-coolGray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full lg:w-7/12 px-4 mb-20 lg:mb-0 self-center">
+                    <p class="text-xl lg:text-2xl tracking-tight mb-10">
+                        Hello there!
+                    </p>
+                    <p class="text-xl lg:text-2xl tracking-tight mb-10">
+                        I'm <span class="italic text-coolGray-600">Ronald te Brake</span>, an engineering manager working at <a href="https://www.getopensocial.com" target="_blank" title="link to Open Social" class="hover:underline">Open Social</a>. Born and raised in the land of windmills, tulips, cheese and impeccable design.
+                    </p>
+                    <p class="text-xl lg:text-2xl tracking-tight mb-10">
+                        This blog is all about <span class="italic text-coolGray-600">people, product (development) and processes</span> and you'll catch me writing about these things a lot as I grow, fail and learn with everything I do. Whether that is 
+                        on the clock or off. 
+                    </p>
+                    <p class="text-xl lg:text-2xl tracking-tight mb-10">
+                        Now, when I'm not at work, you can find me enjoying life's finer things. From cheese, to a coffee, or just some good old deep conversations on life. Did you catch some of the cheesiness i've incoorporated here?
+                    </p>
+                    <p class="text-xl lg:text-2xl tracking-tight mb-10">
+                        Take a look around, drop a comment or shoot me a message.
+                        I'd love to hear from you. Let's build, learn, share and grow together.
+                    </p>
+                </div>
+                <div class="w-full lg:w-5/12 px-4 order-last">
+                    <img class="block h-135 w-full max-w-lg mx-auto lg:mx-0 rounded-4xl object-cover" src="/placeholder-hero.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-24 bg-coolGray-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+          <h2 class="font-heading text-6xl xs:text-8xl sm:text-10xl tracking-tighter mb-20">Values</h1>
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full lg:w-5/12 px-4 order-last lg:order-first">
+              <img class="block h-135 w-full max-w-lg mx-auto lg:mx-0 rounded-4xl object-cover" src="/placeholder-hero.jpg" alt="">
+            </div>
+            <div class="w-full lg:w-7/12 px-4 mb-20 lg:mb-0 self-center">
+              <div class="max-w-lg xl:max-w-none mx-auto lg:mr-0">
+                <button class="group block text-left w-full pb-6 mb-8 border-b">
+                  <div class="flex items-center">
+                    <span class="inline-block mr-8 text-sm">01</span>
+                    <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Communication is key</span>
+                    <span class="group-hover:hidden ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 15.0312L12.4993 21.3542L6.17643 15.0313" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 3.646L12.5 21.1772" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                    <span class="hidden group-hover:block ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 9.96875L12.4993 3.64583L6.17643 9.96875" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 21.354L12.5 3.82276" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hidden group-hover:block mt-6 pr-10">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                  </div>
+                </button>
+                <button class="group block w-full text-left pb-6 mb-8 border-b">
+                  <div class="flex items-center">
+                    <span class="inline-block mr-8 text-sm">02</span>
+                    <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Celebrate mistakes</span>
+                    <span class="hidden ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 15.0312L12.4993 21.3542L6.17643 15.0313" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 3.646L12.5 21.1772" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                    <span class="block ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 9.96875L12.4993 3.64583L6.17643 9.96875" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 21.354L12.5 3.82276" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="block mt-6 pr-10">
+                    <p>One of the things we have implemented is something we call Minion of the Month. It's a moment at the All Hands where we can share some of the mistakes we made during that month. 
+                        Sharing what happened, but also what we learned. </p>
+                  </div>
+                </button>
+                <button class="group block w-full text-left">
+                  <div class="flex items-center">
+                    <span class="inline-block mr-8 text-sm">03</span>
+                    <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Share knowledge</span>
+                    <span class="group-hover:hidden ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 15.0312L12.4993 21.3542L6.17643 15.0313" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 3.646L12.5 21.1772" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                    <span class="hidden group-hover:block ml-auto">
+                      <svg width="25" height="25" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8223 9.96875L12.4993 3.64583L6.17643 9.96875" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 21.354L12.5 3.82276" stroke="black" stroke-width="1.61806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hidden group-hover:block mt-6 pr-10">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</BaseLayout>

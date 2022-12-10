@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
+import Hero from '@/components/Hero.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/config';
+const permalink = Astro.site.href;
+
+// Use the v2 getCollection to fetch all blog posts, and then sort them by date.
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort(
+	(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} permalink={permalink}>
+  <section class="place-items-center px-6 py-24 sm:py-32 lg:px-8">
+    <div class="text-center">
+        <p class="text-base font-semibold">404</p>
+        <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">Page not found</h1>
+        <p class="mt-6 text-base leading-7">Houston, we've got a problem.</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black dark:border-white" href="/">
+            <span class="mr-4">Return home</span>
+            <span class="group-hover:rotate-45 transform transition duration-100">
+              <svg width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                <path d="M9.5 1.5L1.5 9.5" stroke="currentColor" stroke-width="1.5"></path>
+                <path d="M9.5 8.83571V1.5H2.16429" stroke="currentColor" stroke-width="1.5"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+    </div>
+  </section>
+</BaseLayout>

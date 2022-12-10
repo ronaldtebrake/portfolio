@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const title = 'snippets';
+const description = 'Sharing some usefull snippets so you (and me) do not have to save them.';
+const permalink = `${Astro.site.href}snippets`;
+const current = 'snippets';
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current={current}>
+    <div class="w-full container mx-auto">
+        <h1 class="text-6xl font-bold">Snippets</h1>
+    </div>
+</BaseLayout>

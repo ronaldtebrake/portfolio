@@ -1,0 +1,42 @@
+---
+type Props = CollectionEntry<'blog'>['data'];
+
+import { Image } from 'astro:assets';
+
+const { title, url, pubDate, heroImage, description, category } = Astro.props;
+
+---
+
+<div class="bg-coolGray-50 dark:bg-coolGray-300 hidden items-center justify-center rounded-3xl lg:flex w-full p-10">
+    <a class="group" href={url}>    
+        <div class="bg-white dark:bg-primary-950 rounded-3xl w-full p-8 relative">
+            <span class="animated-banner inline-block right-0 z-50 rotate-[25deg] absolute rounded-[0.27rem] bg-primary-100 p-[0.25em] text-lg font-bold leading-none text-primary-700">Featured post</span>
+            <div class="group flex flex-col mb-5 overflow-hidden rounded-xl">
+                <Image src={heroImage} class="transform" alt="" />
+            </div>
+            <div class="grid gap-1 grid-cols-4 text-sm mb-3">
+                <time datetime={pubDate} class="flex-auto min-w-[60px]">
+                  {new Date(pubDate).toLocaleDateString('en-us', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                  })}
+                </time>
+                <span class="uppercase">{category}</span>
+            </div>
+            <p class="text-3xl md:text-4xl tracking-tight group-hover:underline">{title}</p>
+        </div>
+    </a>
+</div>
+
+<style>
+    .animated-banner {
+        animation: z-axis-animation 1s ease 1s 1 alternate;
+    }
+
+    @keyframes z-axis-animation {
+        0%   {transform: rotateZ(25deg)}
+        50%  {transform: rotateZ(0deg)}
+        100% {transform: rotateZ(25deg)}
+    }
+</style>
