@@ -1,5 +1,4 @@
 ---
-import Logo from './Logo.astro'
 import Nav from './Nav.astro'
 const { current = '' } = Astro.props;
 import "../styles/global.css";
@@ -7,6 +6,5 @@ import "../styles/global.css";
 ---
 
 <header>
-  <Logo />
   <Nav current={current} />
 </header>
