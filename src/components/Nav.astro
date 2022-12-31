@@ -1,6 +1,26 @@
 ---
 const { current = '' } = Astro.props;
 import Logo from './Logo.astro'
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+const navClassNames = ['block',
+                       'py-2',
+                       'pl-3',
+                       'pr-4',
+                       'text-gray-700',
+                       'rounded',
+                       'hover:bg-gray-100',
+                       'md:hover:bg-transparent',
+                       'md:border-0',
+                       'md:hover:text-blue-700',
+                       'md:p-0',
+                       'dark:text-gray-400',
+                       'md:dark:hover:text-white',
+                       'dark:hover:bg-gray-700',
+                       'dark:hover:text-white',
+                       'md:dark:hover:bg-transparent'];
+
 ---
 
 <nav class="bg-white shadow-lg border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
@@ -31,9 +51,9 @@ import Logo from './Logo.astro'
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <!-- <li><a href="/" class="{current === "" ? "selected" : ""} block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Home</a></li> -->
-        <li><a href="/" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a></li>
-        <li><a href="/blog" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a></li>
-        <li><a href="/illustrations" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Illustrations</a></li>
+        <li><a href="/" class:list={[currentPath === "" ? "active" : "", navClassNames]}>Home</a></li>
+        <li><a href="/blog" class:list={[currentPath === "blog" ? "active" : "", navClassNames]}>Blog</a></li>
+        <li><a href="/illustrations" class:list={[currentPath === "illustrations" ? "active" : "", navClassNames]}>Illustrations</a></li>
       </ul>
     </div>
   </div>
