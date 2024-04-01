@@ -38,7 +38,8 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
 ---
 
 <header
-  class="transition bg-coolGray-50 dark:bg-primary-950" 
+  class="transition bg-coolGray-50 dark:bg-primary-950"
+  id="header" 
 >
   <div class="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 lg:max-w-8xl">
     <div class="flex">
@@ -154,9 +155,13 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
     const menuBtn = document.getElementById('triggerToggle');
     const menuContainer = document.getElementById('website-menu');
     const menuLinks = document.getElementById('links');
+    const header = document.getElementById('header');
 
     menuBtn?.addEventListener('click', (e) => {
       e.preventDefault();
+
+      header?.classList.toggle('bg-coolGray-50');
+      header?.classList.toggle('bg-coolGray-150');
 
       // Toggle the menu icon
       const myElement = document.getElementById("triggerToggle");

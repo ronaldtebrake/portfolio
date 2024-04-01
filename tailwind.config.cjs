@@ -19,19 +19,15 @@ module.exports = {
         colors: {
             current: 'currentColor',
             transparent: 'transparent',
-
             black: '#000',
             white: '#fff',
-
-            'quality': '#0077C0',
-            'performance': 'yellow',
+            'product': 'yellow',
             'processes': 'red',
-            'drupal': 'black',
+            'people': 'black',
             current: 'currentColor',
             transparent: 'transparent',
             white: '#ffffff',
             primary: colors.gray,
-
             gray: {
                 50: '#f9fafb',
                 100: '#f3f4f6',
@@ -901,21 +897,15 @@ module.exports = {
             opacity: 0.2,
 					},
 				},
-				".drupal": {
+				".product": {
 					'&:hover': {
-						backgroundColor: theme("colors.drupal"),
+						backgroundColor: theme("colors.product"),
             opacity: 0.2,
 					},
 				},
-				".quality": {
+				".people": {
 					'&:hover': {
-						backgroundColor: theme("colors.quality"),
-            opacity: 0.2,
-					},
-				},
-				".performance": {
-					'&:hover': {
-						backgroundColor: theme("colors.performance"),
+						backgroundColor: theme("colors.people"),
             opacity: 0.2,
 					},
 				},

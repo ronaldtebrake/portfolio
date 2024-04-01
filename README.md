@@ -15,25 +15,26 @@
 * https://aidankinzett.com/blog/astro-open-graph-image/
 
 ### Analytics:
-* https://usefathom.com/ref/MJRVOF
+* https://usefathom.com/
 
 # TODO:
 - [ ] Content
 - [ ] Lighthouse check PR GitHub automation
-- [ ] Analytics https://usefathom.com/ref/MJRVOF
+- [ ] Analytics https://usefathom.com/
 - [ ] Mastodon / Twitter automation?
-- [ ] Sharing snippets
 - [ ] Minion of the Month - https://codepen.io/AsyrafHussin/pen/wXjpyB
-- [ ] Footer - Newsletter https://convertkit.com/features/forms
+
+## Later
 - [ ] Comments by Giscus
+- [ ] Footer - Newsletter https://convertkit.com/features/forms
+- [ ] Table of Contents? - https://medium.com/@rezahedi/how-to-build-table-of-contents-in-astro-and-sectionize-the-markdown-content-78bee84e6a7f
+- [ ] Related posts
+- [ ] Create a prevous + next blog post underneath a post and use transition:animate="slide" to slide left or right
+- [ ] Reading time 
 - [ ] Dark theme (see Nav.astro dark / light commented out)
 - [ ] https://codepen.io/ronaldtebrake/pen/XWGbQWL (when we have some categories / content)
 - [ ] Filters on category? and add a new section on the home page linking to filters
 - [ ] Pagination -> https://rimdev.io/creating-a-pagination-component-with-astro/
-- [ ] Table of Contents?
-- [ ] Related posts
-- [ ] Create a prevous + next blog post underneath a post and use transition:animate="slide" to slide left or right
-- [ ] Reading time 
 
 
 ### FAQ

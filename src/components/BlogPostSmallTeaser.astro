@@ -11,7 +11,7 @@ const { title, url, pubDate, heroImage, category, description } = Astro.props;
   <a class="group block" href={url}>
     <div class="relative mb-6 rounded-4xl overflow-hidden">
       <Image src={heroImage} alt="" class="block w-full h-72 object-cover" />
-      <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10', category]}></div>
+      <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10 group-hover:bg-black']}></div>
     </div>
     <div class="max-w-lg">
       <div class="grid gap-1 grid-cols-4 text-sm mb-3">
