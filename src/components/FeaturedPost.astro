@@ -19,7 +19,6 @@ const { title, url, pubDate, heroImage, description, category } = Astro.props;
                   {new Date(pubDate).toLocaleDateString('en-us', {
                       year: 'numeric',
                       month: 'short',
-                      day: 'numeric',
                   })}
                 </time>
                 <span class="uppercase">{category}</span>
