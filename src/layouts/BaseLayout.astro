@@ -14,7 +14,7 @@ const { title, description, ogImage, permalink, current } = Astro.props;
 
 <html 
   lang="en" 
-  class="h-full overflow-y-scroll"
+  class="h-full overflow-y-scroll antialiased"
   x-data="{
     darkMode: localStorage.getItem('darkMode')
     || localStorage.setItem('darkMode', 'system')}"
