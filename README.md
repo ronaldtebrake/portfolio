@@ -19,6 +19,7 @@
 
 # TODO:
 - [ ] Content
+- [ ] Small about me teaser under content
 - [ ] Lighthouse check PR GitHub automation
 - [ ] Analytics https://usefathom.com/
 - [ ] Mastodon / Twitter automation?
@@ -26,7 +27,6 @@
 
 ## Later
 - [ ] Comments by Giscus
-- [ ] Footer - Newsletter https://convertkit.com/features/forms
 - [ ] Table of Contents? - https://medium.com/@rezahedi/how-to-build-table-of-contents-in-astro-and-sectionize-the-markdown-content-78bee84e6a7f
 - [ ] Related posts
 - [ ] Create a prevous + next blog post underneath a post and use transition:animate="slide" to slide left or right
