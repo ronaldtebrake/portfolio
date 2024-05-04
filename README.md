@@ -26,7 +26,6 @@
 - [ ] Minion of the Month - https://codepen.io/AsyrafHussin/pen/wXjpyB
 
 ## Later
-- [ ] Comments by Giscus
 - [ ] Table of Contents? - https://medium.com/@rezahedi/how-to-build-table-of-contents-in-astro-and-sectionize-the-markdown-content-78bee84e6a7f
 - [ ] Related posts
 - [ ] Create a prevous + next blog post underneath a post and use transition:animate="slide" to slide left or right
