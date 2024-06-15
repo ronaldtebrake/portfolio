@@ -8,10 +8,6 @@ export interface Props {
 const { title, description, ogImage = new URL(Astro.site + "placeholder-social.webp") } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-
-import { ViewTransitions } from 'astro:transitions';
-
 ---
 
 <!-- Global Metadata -->
@@ -44,4 +40,8 @@ import { ViewTransitions } from 'astro:transitions';
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImage} />
 
-<ViewTransitions />
+<style>
+    @view-transition {
+      navigation: auto;
+    }
+</style>

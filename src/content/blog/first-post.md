@@ -2,7 +2,7 @@
 title: "Flamin' hot... cache!"
 description: "How to use cache warming in Drupal to build up caches."
 pubDate: "Jul 08 2022"
-heroImage: "./assets/placeholder-hero.jpg"
+heroImage: "./assets/cachewarming.webp"
 tags: ["product", "quality"]
 category: "product"
 featured: true
