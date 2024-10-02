@@ -87,9 +87,7 @@
   <path class="m hibbem" d="M180.6,151.75c1.59.05,2.92-1.19,2.97-2.77.02-.54-.11-1.07-.38-1.54-7.47-13.25-11.43-28.18-11.49-43.39v-7.47c0-1.59-1.29-2.87-2.87-2.87h-69.83c-1.59,0-2.87,1.29-2.87,2.87v7.47c-.05,15.21-4.01,30.15-11.49,43.39-.81,1.37-.36,3.13,1.01,3.94.56.33,1.22.46,1.87.37h93.1Z"/>
   <path class="h hibbem" d="M90.08,151.75h87.64v19.54h-87.64v-19.54Z"/>
   <path class="l hibbem" d="M90.08,151.75h87.64v19.54h-87.64v-19.54Z"/>
-  <rect class="h hibbem" x="105.89" y="119.57" width="17.24" height="21.55" rx="2.87" ry="2.87"/>
   <path class="o hibbem" d="M157.61,171.58h-12.93v-8.62c0-3.65,2.96-6.61,6.61-6.61h0c3.54.15,6.33,3.07,6.32,6.61v8.62Z"/>
-  <!-- <path class="j" d="M107.32,171.58v-10.92M127.44,171.58v-10.92"/> -->
   <path class="j hibbem" d="M104.39,135.81v-10.92M124.5,135.81v-10.92"/>
   <path class="j hibbem" d="M143.57,118.62v-10.92M163.68,118.62v-10.92"/>
   <g id="c" data-name="Layer_2">
@@ -121,8 +119,21 @@
 </svg>
 
 <style>
+  .pathzanimated {
+    animation-delay: 0s;
+    stroke:#000;
+    fill:none;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation-name: dash;
+    animation-duration: 5.0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+  }
+
   .svgpeople.animated {
-    animation-delay: 1s;
+    animation-delay: 0s;
     stroke:#000;
     fill:none;
     stroke-dasharray: 1000px;
@@ -135,7 +146,7 @@
   }
 
   .svgprocess.animated {
-    animation-delay: 3s;
+    animation-delay: 0s;
     stroke:#000;
     fill:none;
     stroke-dasharray: 1000px;
@@ -148,7 +159,7 @@
   }
 
   .svgproduct.animated {
-    animation-delay: 5s;
+    animation-delay: 0s;
     stroke:#000;
     fill:none;
     stroke-dasharray: 1000px;
@@ -167,34 +178,61 @@
   }
 </style>
 
-<script is:inline>
+<script>
   document.querySelectorAll('.hibbem').forEach(function(target) {
     target.style.display = 'none';
   });
 
+  let people, process, product = false;
   document.getElementById("windmill").pauseAnimations();
-  document.getElementById("windmill-container").onclick = function(){
-    document.getElementById("windmill").unpauseAnimations();
-    document.querySelectorAll('.hibbem').forEach(function(target) {
-      target.style.display = 'block';
-    });
+
+  document.getElementById("btnprocess").onclick = function(){
+    document.querySelectorAll('.svgprocess').forEach(function(target) {
+      target.classList.add("animated");
+    })
+    updateValue('process', true);
   };
 
-  function onVisible(element, callback) {
-    new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.intersectionRatio > 0) {
-          callback(element);
-          observer.disconnect();
-        }
+  document.getElementById("btnpeople").onclick = function(){  
+    document.querySelectorAll('.svgpeople').forEach(function(target) {
+      target.classList.add("animated");
+    })
+    updateValue('people', true);
+  };
+
+  document.getElementById("btnproduct").onclick = function(){
+    document.querySelectorAll('.svgproduct').forEach(function(target) {
+      target.classList.add("animated");
+    })
+    updateValue('product', true);
+  };
+
+  // Function to check if all three values are true
+  function checkAllTrue() {
+    if (people && process && product) {
+      console.log("NOW");
+      document.querySelectorAll('.hibbem').forEach(function(target) {
+        target.style.display = 'block';
+        target.classList.add('pathzanimated');
       });
-    }).observe(element);
-    if(!callback) return new Promise(r => callback=r);
+
+      setTimeout(() => {
+        document.getElementById("windmill").unpauseAnimations();
+      }, 1000); 
+    }
   }
 
-  onVisible(document.querySelector("#windmill"), () => 
-    document.querySelectorAll('.svgpeople, .svgprocess, .svgproduct').forEach(function(target) {
-      target.classList.add("animated");
-    })  
-  ); 
+  // Function to update a value and check if all are true
+  function updateValue(valueName, newValue) {
+      if (valueName === 'product') {
+          product = newValue;
+      } else if (valueName === 'process') {
+          process = newValue;
+      } else if (valueName === 'people') {
+          people = newValue;
+      }
+
+      // After updating a value, check if all values are true
+      checkAllTrue();
+  }
 </script>
