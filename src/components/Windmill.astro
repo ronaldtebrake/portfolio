@@ -61,27 +61,3 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
     </div>
   </div>
 </section>
-
-<script>
-  // Select all buttons with the class 'group'
-  const buttons = document.querySelectorAll('button.group');
-  const details = document.querySelectorAll('.details');
-
-  // Iterate over each button and add an onclick event listener
-  buttons.forEach(button => {
-    button.onclick = function() {
-      const btndetails = this.querySelectorAll('.details');
-
-      details.forEach(detail => {
-        detail.classList.add('hidden');
-        detail.classList.remove('block');
-      });
-      btndetails.forEach(detail => {
-        detail.classList.add('block');
-        detail.classList.remove('hidden');
-      });
-    };
-  });
-
-
-</script>

@@ -126,10 +126,10 @@
     stroke-dasharray: 1000px;
     stroke-dashoffset: 1000px;
     animation-name: dash;
-    animation-duration: 5.0s;
+    animation-duration: 2.0s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
   }
 
   .svgpeople.animated {
@@ -191,6 +191,7 @@
       target.classList.add("animated");
     })
     updateValue('process', true);
+    updateDetails(this);
   };
 
   document.getElementById("btnpeople").onclick = function(){  
@@ -198,6 +199,7 @@
       target.classList.add("animated");
     })
     updateValue('people', true);
+    updateDetails(this);
   };
 
   document.getElementById("btnproduct").onclick = function(){
@@ -205,12 +207,12 @@
       target.classList.add("animated");
     })
     updateValue('product', true);
+    updateDetails(this);
   };
 
   // Function to check if all three values are true
   function checkAllTrue() {
     if (people && process && product) {
-      console.log("NOW");
       document.querySelectorAll('.hibbem').forEach(function(target) {
         target.style.display = 'block';
         target.classList.add('pathzanimated');
@@ -234,5 +236,20 @@
 
       // After updating a value, check if all values are true
       checkAllTrue();
+  }
+
+  const details = document.querySelectorAll('.details');
+
+  function updateDetails(btn) {
+    const btndetails = btn.querySelectorAll('.details');
+
+    details.forEach(detail => {
+      detail.classList.add('hidden');
+      detail.classList.remove('block');
+    });
+    btndetails.forEach(detail => {
+      detail.classList.add('block');
+      detail.classList.remove('hidden');
+    });
   }
 </script>
