@@ -713,6 +713,7 @@ module.exports = {
           8: '8px',
         },
         rotate: {
+          '-270': '-270deg',
           '-180': '-180deg',
           '-90': '-90deg',
           '-45': '-45deg',
@@ -730,6 +731,8 @@ module.exports = {
           45: '45deg',
           90: '90deg',
           180: '180deg',
+          225: '225deg',
+          270: '270deg',
         },
         saturate: {
           0: '0',

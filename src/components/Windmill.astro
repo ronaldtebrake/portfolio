@@ -1,0 +1,75 @@
+---
+import Windmillsvg from '@/components/Windmillsvg.astro'
+
+---
+
+<section class="py-12 md:py-24 bg-coolGray-50 overflow-hidden" id="windmill-container">
+  <div class="container mx-auto px-4">
+    <!-- <h2 class="font-heading text-6xl xs:text-8xl sm:text-10xl tracking-tighter mb-20">Values</h1> -->
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full lg:w-5/12 px-4">
+        <Windmillsvg />
+        <!-- <img class="block h-135 w-full max-w-lg mx-auto lg:mx-0 rounded-4xl object-cover" src="/placeholder-hero.jpg" alt=""> -->
+      </div>
+      <div class="w-full lg:w-7/12 px-4 mt-20 lg:mt-0 self-center">
+        <div class="max-w-lg xl:max-w-none mx-auto lg:mr-0">
+          <button class="group block text-left w-full pb-6 mb-8 border-b peoplebutton">
+            <div class="flex items-center">
+              <span class="inline-block mr-8 text-sm">01</span>
+              <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">People</span>
+              <span class="group-hover:rotate-270 w-6 h-6 lg:group-hover:rotate-225 transform transition duration-100 ml-auto">
+                <svg viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                  <path d="M30 3L3 30" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M30 27.758V3H5.24196" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6 pr-10">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+            </div>
+          </button>
+          <button class="group block w-full text-left pb-6 mb-8 border-b processbutton">
+            <div class="flex items-center">
+              <span class="inline-block mr-8 text-sm">02</span>
+              <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Process</span>
+              <span class="group-hover:rotate-270 w-6 h-6 lg:group-hover:rotate-225 transform transition duration-100 ml-auto">
+                <svg viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                  <path d="M30 3L3 30" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M30 27.758V3H5.24196" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6 pr-10">
+              <p>One of the things we have implemented is something we call Minion of the Month. It's a moment at the All Hands where we can share some of the mistakes we made during that month. 
+                  Sharing what happened, but also what we learned. </p>
+            </div>
+          </button>
+          <button class="group block w-full text-left productbutton">
+            <div class="flex items-center">
+              <span class="inline-block mr-8 text-sm">03</span>
+              <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Product development</span>
+              <span class="group-hover:rotate-270 w-6 h-6 lg:group-hover:rotate-225 transform transition duration-100 ml-auto">
+                <svg viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                  <path d="M30 3L3 30" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M30 27.758V3H5.24196" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6 pr-10">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const name = document.querySelector("path.svgpeople");
+  const btn = document.querySelector("button.peoplebutton");
+    btn.addEventListener("click", function () {
+    name.stroke = "#FFF";
+    console.log("btn");
+  });
+</script>
