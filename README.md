@@ -5,7 +5,7 @@
 ### Components:
 * https://shuffle.dev
 * https://www.bestastrothemes.com/theme/m6v3l9-astro-theme-stone/
-* Minion - https://codepen.io/AsyrafHussin/pen/wXjpyB
+* simpleanalytics
 
 ### PWA:
 * https://github.com/tatethurston/astrojs-service-worker#readme
@@ -15,15 +15,13 @@
 * https://aidankinzett.com/blog/astro-open-graph-image/
 
 ### Analytics:
-* https://usefathom.com/
+* [https://www.simpleanalytics.com/](https://www.simpleanalytics.com/)
 
 # TODO:
 - [ ] Content
 - [ ] Small about me teaser under content
 - [ ] Lighthouse check PR GitHub automation
-- [ ] Analytics https://usefathom.com/
 - [ ] Mastodon / Twitter automation?
-- [ ] Minion of the Month - https://codepen.io/AsyrafHussin/pen/wXjpyB
 
 ## Later
 - [ ] Table of Contents? - https://medium.com/@rezahedi/how-to-build-table-of-contents-in-astro-and-sectionize-the-markdown-content-78bee84e6a7f
