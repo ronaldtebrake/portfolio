@@ -5,15 +5,13 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
 
 <section class="py-12 md:py-24 bg-coolGray-50 overflow-hidden" id="windmill-container">
   <div class="container mx-auto px-4">
-    <!-- <h2 class="font-heading text-6xl xs:text-8xl sm:text-10xl tracking-tighter mb-20">Values</h1> -->
     <div class="flex flex-wrap -mx-4">
       <div class="w-full lg:w-5/12 px-4">
         <Windmillsvg />
-        <!-- <img class="block h-135 w-full max-w-lg mx-auto lg:mx-0 rounded-4xl object-cover" src="/placeholder-hero.jpg" alt=""> -->
       </div>
       <div class="w-full lg:w-7/12 px-4 mt-20 lg:mt-0 self-center">
-        <div class="max-w-lg xl:max-w-none mx-auto lg:mr-0">
-          <button class="group block text-left w-full pb-6 mb-8 border-b peoplebutton">
+        <div class="max-w-lg xl:max-w-none mx-auto lg:mr-0 pt-6">
+          <button class="group block text-left w-full pb-6 mb-8 border-b">
             <div class="flex items-center">
               <span class="inline-block mr-8 text-sm">01</span>
               <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">People</span>
@@ -24,11 +22,11 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
                 </svg>
               </span>
             </div>
-            <div class="mt-6 pr-10">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+            <div class="mt-6 pr-10 hidden details">
+              <p>The human aspect, focusing on hiring, developing, and motivating the right talent to drive innovation and performance. Their engagement, alignment, and development are crucial for success.</p>
             </div>
           </button>
-          <button class="group block w-full text-left pb-6 mb-8 border-b processbutton">
+          <button class="group block w-full text-left pb-6 mb-8 border-b">
             <div class="flex items-center">
               <span class="inline-block mr-8 text-sm">02</span>
               <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Process</span>
@@ -39,12 +37,11 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
                 </svg>
               </span>
             </div>
-            <div class="mt-6 pr-10">
-              <p>One of the things we have implemented is something we call Minion of the Month. It's a moment at the All Hands where we can share some of the mistakes we made during that month. 
-                  Sharing what happened, but also what we learned. </p>
+            <div class="mt-6 pr-10 hidden details">
+              <p>The structured methods and workflows used to produce the product and enable people to work efficiently, ensuring consistency, quality, and agility.</p>
             </div>
           </button>
-          <button class="group block w-full text-left productbutton">
+          <button class="group block w-full text-left">
             <div class="flex items-center">
               <span class="inline-block mr-8 text-sm">03</span>
               <span class="inline-block text-2xl lg:text-3xl xl:text-4xl">Product development</span>
@@ -55,8 +52,8 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
                 </svg>
               </span>
             </div>
-            <div class="mt-6 pr-10">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+            <div class="mt-6 pr-10 hidden details">
+              <p>The value delivered to the market, which must meet customer needs, offer value, and continuously evolve based on feedback.</p>
             </div>
           </button>
         </div>
@@ -65,11 +62,26 @@ import Windmillsvg from '@/components/Windmillsvg.astro'
   </div>
 </section>
 
-<script is:inline>
-  const name = document.querySelector("path.svgpeople");
-  const btn = document.querySelector("button.peoplebutton");
-    btn.addEventListener("click", function () {
-    name.stroke = "#FFF";
-    console.log("btn");
+<script>
+  // Select all buttons with the class 'group'
+  const buttons = document.querySelectorAll('button.group');
+  const details = document.querySelectorAll('.details');
+
+  // Iterate over each button and add an onclick event listener
+  buttons.forEach(button => {
+    button.onclick = function() {
+      const btndetails = this.querySelectorAll('.details');
+
+      details.forEach(detail => {
+        detail.classList.add('hidden');
+        detail.classList.remove('block');
+      });
+      btndetails.forEach(detail => {
+        detail.classList.add('block');
+        detail.classList.remove('hidden');
+      });
+    };
   });
+
+
 </script>
