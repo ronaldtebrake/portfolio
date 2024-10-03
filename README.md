@@ -22,6 +22,7 @@
 - [ ] Small about me teaser under content
 - [ ] Lighthouse check PR GitHub automation
 - [ ] Mastodon / Twitter automation?
+- [ ] Add read list by using https://www.goodreads.com
 
 ## Later
 - [ ] Table of Contents? - https://medium.com/@rezahedi/how-to-build-table-of-contents-in-astro-and-sectionize-the-markdown-content-78bee84e6a7f
