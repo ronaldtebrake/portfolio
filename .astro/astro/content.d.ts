@@ -151,9 +151,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"cache-warming.md": {
-	id: "cache-warming.md";
-  slug: "cache-warming";
+"drupalcon-2024-barcelona.md": {
+	id: "drupalcon-2024-barcelona.md";
+  slug: "drupalcon-2024-barcelona";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
