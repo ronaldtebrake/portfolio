@@ -4,6 +4,7 @@ description: "Everything about my experiences at DrupalCon Barcelona 2024."
 pubDate: "Oct 03 2024"
 heroImage: "./assets/placeholder-hero.jpg"
 category: "product"
+featured: true
 ---
 
 # DrupalCon Barcelona Recap
