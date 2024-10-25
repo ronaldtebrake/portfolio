@@ -8,7 +8,7 @@ import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 
 export default defineConfig({
-  site: 'https://www.ronaldtebrake.nl',
+  site: 'https://ronaldtebrake.nl',
   integrations: [
     mdx(), 
     sitemap(), 
