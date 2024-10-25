@@ -2,7 +2,7 @@
 title: "DrupalCon Barcelona 2024 recap"
 description: "Everything about my experiences at DrupalCon Barcelona 2024."
 pubDate: "Oct 03 2024"
-heroImage: "./assets/DALL·E 2024-10-22 15.34.55 - A more realistic version of a community experience platform building inspired by Antoni Gaudí and the Sagrada Familia. The building features organic, .webp"
+heroImage: "./assets/antoni-gaudi-community-experience-building-dall-e.webp"
 category: "product"
 featured: true
 ---
