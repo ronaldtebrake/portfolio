@@ -5,9 +5,20 @@ export interface Props {
 	ogImage?: string;
 }
 
-const { title, description, ogImage = new URL(Astro.site + "placeholder-social.webp") } = Astro.props;
+const { title, description } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Split the String and replace the first and last slash.
+var split = Astro.url.pathname.replace(/^\/|\/$/g, '');
+// Now remove the blog prefix.
+var path = split.replace("blog/", "");
+
+var ogImage = new URL(Astro.site.origin + '/og/' + path + '.png');
+
+if (Astro.url.pathname === '/') {
+ ogImage = new URL(Astro.site + "placeholder-social.webp");
+}
+
 ---
 
 <!-- Global Metadata -->
