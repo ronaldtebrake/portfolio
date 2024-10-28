@@ -15,7 +15,10 @@ var path = split.replace("blog/", "");
 
 var ogImage = new URL(Astro.site.origin + '/og/' + path + '.png');
 
-if (Astro.url.pathname === '/') {
+// This works for all pages that are not starting with /blog
+// But also fixes this for the /blog/ overview, that starts with it
+// but should also not receive the blog generated OG image.
+if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/blog/')) {
  ogImage = new URL(Astro.site + "placeholder-social.webp");
 }
 
