@@ -41,9 +41,9 @@ My mind couldn't help but wonder how we can leverage all of the amazing work don
 ## Artifical Intelligence
 Last but not least, AI was a major focus of this year's DrupalCon, and several sessions highlighted how artificial intelligence is reshaping the landscape for content management. Beyond what was discussed in the Driesnote, multiple sessions dove deeper into the practical applications of AI in Drupal.
 
-We we're fortunate enough to already have a headstart with AI. With Open Social working together closely with Freelygive, the maintainers of the Drupal AI module, so I was curious to see the excitement of others on this topic. I could really feel the excitement, as well as the concerns on the matter during the Drupal AI Q&A / Panel session in the Auditorium. 
+We we're fortunate enough to already have a headstart with AI. With Open Social working together closely with Freelygive, the maintainers of the Drupal AI module. I could really feel the excitement, as well as the concerns on the matter during the Drupal AI Q&A / Panel session in the Auditorium. 
 
-It really got me even more excited, but also showed me how doing this responsibly, being transparent, keeping the human-in-the-loop approach, is the way to go. There is so much going on, I can totally understand the concerns and by sharing more in my blog on how we deal with AI ourselves hopefully I can take some of those concerns away.
+It really got showed me how doing this responsibly, being transparent, keeping the human-in-the-loop approach, is the way to go. There is so much going on, I can totally understand the concerns and by sharing more in my blog on how we deal with AI ourselves hopefully I can take some of those concerns away.
 
 ## Looking forward
 
