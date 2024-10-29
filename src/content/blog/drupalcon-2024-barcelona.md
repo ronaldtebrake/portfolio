@@ -19,9 +19,9 @@ Where recipes are becoming the new way of installing sets of dependencies and co
 
 However, if you look deeper, a lot of the amazing work done for Drupal CMS we *will* be able to leverage. It's not that Drupal stops caring about Drupal Core, developers or enterprise users. In order to be able to create Drupal CMS, investments in the ecosystem will need to continue. 
 
-I believe, similar to how Dries reflected on Gaudí's lifes work, the Sagrada Familia, and how it's not just Gaudí's lifeswork but also from all the other craftsme, I feel Drupal CMS kickstarts a bunch of new shiny features. Some we can directly use, but if anything, it serves as great inspiration for us to continue our efforts working on our community experience platform following the footsteps of those man made marvels in Drupal core and the contrib ecosystem.
+I believe, similar to how Dries reflected on Gaudí's lifes work, the Sagrada Familia, and how it's not just Gaudí's lifeswork but also from all the other craftsmen, I feel Drupal CMS kickstarts a bunch of new shiny features. Some we can directly use, but if anything, it serves as great inspiration for us to continue our efforts working on our community experience platform following the footsteps of those man made marvels in Drupal core and the contrib ecosystem.
 
-After taking some time to digest all what I've learned, here are some of the exciting changes that really resonated with me.
+After taking some time to digest all what I've learned, here are some of the exciting marvels that really resonated with me.
 
 ## Access Policy API
 Kristiaan's session on the Access Policy API was maybe my biggest highlight. Hearing Kristiaan talk about the API opened up my mind to a whole new range of possibilities on how we can deal with access within our communities. 
