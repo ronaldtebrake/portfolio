@@ -28,7 +28,20 @@ if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/bl
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap" rel="stylesheet">
+<link 
+  rel="preload"
+  href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<noscript>
+  <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+  />
+</noscript>
 
 <meta name="generator" content={Astro.generator} />
 
