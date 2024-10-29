@@ -16,6 +16,7 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.1",
+    "@playform/compress": "^0.1.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/alpinejs": "^3.13.2",
     "@vercel/og": "^0.6.1",

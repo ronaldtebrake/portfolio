@@ -7,15 +7,17 @@ import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 
+import playformCompress from "@playform/compress";
+
 export default defineConfig({
   site: 'https://www.ronaldtebrake.nl/',
   integrations: [
-    mdx(), 
-    sitemap(), 
-    tailwind(), 
-    compress(), 
-    robotsTxt(), 
-    serviceWorker(), 
+    mdx(),
+    sitemap(),
+    tailwind(),
+    compress(),
+    robotsTxt(),
+    serviceWorker(),
     webmanifest({
       name: 'Blog by Ronald te Brake',
       icon: {
@@ -31,9 +33,9 @@ export default defineConfig({
       background_color: '#F7F7F7',
       display: 'standalone',
     }),
+    playformCompress()
   ],
   prefetch: {
     prefetchAll: true
   }
 });
-
