@@ -19,7 +19,7 @@ However, if you look deeper, a lot of the amazing work done for Drupal CMS we *w
 
 I believe, similar to how Dries reflected on Gaudí's life’s work, the Sagrada Familia, and how it’s not just Gaudí’s legacy but also the work of many other craftsmen, Drupal CMS kickstarts a bunch of new, shiny features. Some we can directly use, but if anything, it serves as great inspiration for us to continue our efforts working on our community experience platform, following in the footsteps of those man-made marvels in Drupal core and the contrib ecosystem.
 
-After taking some time to digest everything I've learned, here are some of the exciting innovations that truly resonated with me.
+After taking some time to digest everything I've learned, here are some of the exciting marvels that truly resonated with me.
 
 ## Access Policy API
 
@@ -41,7 +41,7 @@ My mind couldn’t help but wonder how we can leverage all of the amazing work d
 
 One of the main focuses was the responsible implementation of AI, emphasizing transparency and the importance of a “human-in-the-loop” approach. A Q&A session and panel discussion on Drupal AI brought forward both excitement and concerns, showing the community’s dedication to ethical AI integration. This approach ensures AI remains an empowering tool while respecting user autonomy and security.
 
-As Open Social has been working closely with FreelyGive, the maintainers of the Drupal AI module, we have already made significant strides in AI integration. The insights shared in Barcelona emphasized the necessity of responsibility in AI—keeping users informed and involved throughout. This approach will likely shape AI-driven tools for Drupal in ways that align with the values of transparency and trustworthiness, assuaging any concerns around its impact on content management.
+As Open Social has been working closely with FreelyGive, the maintainers of the Drupal AI module, we have already made significant progress in integrating AI. The insights shared in Barcelona highlighted the importance of using AI responsibly—keeping users informed and involved at every step. This approach will likely shape AI-driven tools for Drupal in ways that build on transparency and trust, helping to ease any worries about its impact on content management.
 
 While many demos, understandably, were dedicated to Drupal CMS, the groundwork here is usable for many more use cases. AI can help create more dynamic and personalized experiences by tailoring content to individual user interests, enhancing community engagement. For instance, AI-powered recommendations, adaptive search, and behavior-based content delivery can ensure users find relevant discussions, events, and resources, making the platform feel more intuitive and responsive. Automation tools for content moderation and user support can streamline operations, allowing community managers to focus on nurturing real interactions. By embedding ethical, transparent AI into these experiences, Drupal is set to empower us to build more connected, vibrant, and user-centric communities.
 
