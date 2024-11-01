@@ -7,45 +7,46 @@ category: "product"
 featured: true
 ---
 
-I had a wonderful time reconnecting with my peers at DrupalCon Barcelona 2024! 
-From reuniting with old friends and making new connections, to gaining insights into the future of Drupal, the event offered a lovely balance of networking and professional development, giving me all kinds of inspiration and motivation. 
-So much so I decided it's about time I start to share more through my own blog, and here we are.
+I had a wonderful time reconnecting with my peers at DrupalCon Barcelona 2024! From reuniting with old friends and making new connections to gaining insights into the future of Drupal, the event offered a lovely balance of networking and professional development, giving me all kinds of inspiration and motivation. So much so, I decided it’s about time I start sharing more through my own blog, and here we are.
 
-## A Glimpse Into the Future: The Driesnote and more
-The highlight of the event was Dries Buytaert's keynote, where he unveiled the future of Drupal, particularly the Drupal CMS (formerly known as Starshot) initiative. Seeing the potential of Drupal evolve into a no-code solution was great. AI-powered tools that can automate everything from content migration to feature creation will fundamentally change the way people work with Drupal, making it more accessible to non-developers. This was more than just a demo; it was a glimpse into a future where site-building is easier, faster, and more intuitive​.
+## A Glimpse Into the Future: The Driesnote and More
 
-Does that help distributions like Open Social? At first glance it might seem far-fetched and I have to admit I was a bit sceptical. 
-Where recipes are becoming the new way of installing sets of dependencies and configuration, we're still trying to be an out of the box solution for communities. Our communities end users also aren't site builders and we don't need them to leverage most of those capabilities within our product. 
+The highlight of the event was Dries Buytaert's keynote, where he unveiled the future of Drupal, particularly the Drupal CMS (formerly known as the Starshot) initiative. Seeing the potential of Drupal evolve into a no-code solution was inspiring. AI-powered tools that can automate everything from content migration to feature creation will fundamentally change the way people work with Drupal, making it more accessible to non-developers. This was more than just a demo; it was a glimpse into a future where site-building is easier, faster, and more intuitive.
 
-However, if you look deeper, a lot of the amazing work done for Drupal CMS we *will* be able to leverage. It's not that Drupal stops caring about Drupal Core, developers or enterprise users. In order to be able to create Drupal CMS, investments in the ecosystem will need to continue. 
+Does that help distributions like Open Social? At first glance, it might seem far-fetched, and I have to admit I was a bit skeptical. Where recipes are becoming the new way of installing sets of dependencies and configuration, we're still trying to be an out-of-the-box solution for communities. Our community’s end users aren’t site builders, and we don’t need them to leverage most of those capabilities within our product.
 
-I believe, similar to how Dries reflected on Gaudí's lifes work, the Sagrada Familia, and how it's not just Gaudí's lifeswork but also from all the other craftsmen, I feel Drupal CMS kickstarts a bunch of new shiny features. Some we can directly use, but if anything, it serves as great inspiration for us to continue our efforts working on our community experience platform following the footsteps of those man made marvels in Drupal core and the contrib ecosystem.
+However, if you look deeper, a lot of the amazing work done for Drupal CMS we *will* be able to leverage. It's not that Drupal stops caring about Drupal Core, developers, or enterprise users. In order to create Drupal CMS, investments in the ecosystem will need to continue.
 
-After taking some time to digest all what I've learned, here are some of the exciting marvels that really resonated with me.
+I believe, similar to how Dries reflected on Gaudí's life’s work, the Sagrada Familia, and how it’s not just Gaudí’s legacy but also the work of many other craftsmen, Drupal CMS kickstarts a bunch of new, shiny features. Some we can directly use, but if anything, it serves as great inspiration for us to continue our efforts working on our community experience platform, following in the footsteps of those man-made marvels in Drupal core and the contrib ecosystem.
+
+After taking some time to digest everything I've learned, here are some of the exciting innovations that truly resonated with me.
 
 ## Access Policy API
-Kristiaan's session on the Access Policy API was maybe my biggest highlight. Hearing Kristiaan talk about the API opened up my mind to a whole new range of possibilities on how we can deal with access within our communities. 
 
-> Drupal has moved from an RBAC (Role-Based Access Control) to a PBAC (Policy-Based Access Control) system where permissions are calculated based on a set of policies that are applied in a given context.
+Kristiaan's session on the Access Policy API was perhaps my biggest highlight. Hearing Kristiaan talk about the API opened up my mind to a whole new range of possibilities for managing access within our communities.
 
-We now get all the tools available to dynamically add or revoke permissions. Instead of having to try and fiddle around with roles and permissions or other attributes, we can now create policies based on dynamic sets of conditions. 
-These policies, being tagged services, can be prioritised, enabling us to determine a wide range of policies that can be applied for the business rules we have in our product whilst ensure we fully understand what happened in what order when.
+> Drupal has moved from an RBAC (Role-Based Access Control) to a PBAC (Policy-Based Access Control) system where permissions are calculated based on a set of policies applied in a given context.
 
-I'll dive deeper in to this in future blog posts, as this really deserves a more in-depth look.
+We now have tools available to dynamically add or revoke permissions. Instead of trying to fiddle with roles, permissions, or other attributes, we can create policies based on dynamic sets of conditions. These policies, being tagged services, can be prioritized, enabling us to determine a wide range of policies that can be applied to the business rules in our product while ensuring we fully understand what happened, in what order, and why.
 
-## Experience builder
-One of the other sessions I attended was focused on the new Experience Builder for Drupal. This tool is poised to be a game-changer, especially for content editors and site builders. It provides a seamless, user-friendly interface where users can build complex site layouts without needing to code. The Experience Builder offers a visual way to customize the site by dragging and dropping components, setting up reusable templates, and managing layouts in real time. This truly empowers non-developers to take full control of their site's look and feel without compromising on flexibility or functionality. 
+I’ll dive deeper into this in future blog posts, as it truly deserves a more in-depth look.
 
-My mind couldn't help but wonder how we can leverage all of the amazing work done there to ensure our content editors can use the experience builder for creating amazing dashboards and landing pages within our product. Currenlty using layout builder for this, it comes with a very Drupal admin like UI. Just seeing where the current status of the experience builder is at, I can't wait to give it a go and see how we can use this within the product.
+## Experience Builder
 
-## Artifical Intelligence
-Last but not least, AI was a major focus of this year's DrupalCon, and several sessions highlighted how artificial intelligence is reshaping the landscape for content management. Beyond what was discussed in the Driesnote, multiple sessions dove deeper into the practical applications of AI in Drupal.
+One of the other sessions I attended focused on the new Experience Builder for Drupal. This tool is poised to be a game-changer, especially for content editors and site builders. It provides a seamless, user-friendly interface where users can build complex site layouts without needing to code. The Experience Builder offers a visual way to customize the site by dragging and dropping components, setting up reusable templates, and managing layouts in real time. This truly empowers non-developers to take full control of their site’s look and feel without compromising on flexibility or functionality.
 
-We we're fortunate enough to already have a headstart with AI. With Open Social working together closely with Freelygive, the maintainers of the Drupal AI module. I could really feel the excitement, as well as the concerns on the matter during the Drupal AI Q&A / Panel session in the Auditorium. 
+My mind couldn’t help but wonder how we can leverage all of the amazing work done there to ensure our content editors can use the Experience Builder to create amazing dashboards and landing pages within our product. Currently using Layout Builder for this, it comes with a very Drupal-admin-like UI. Just seeing the current status of the Experience Builder, I can’t wait to give it a go and see how we can use it within our product.
 
-It really got showed me how doing this responsibly, being transparent, keeping the human-in-the-loop approach, is the way to go. There is so much going on, I can totally understand the concerns and by sharing more in my blog on how we deal with AI ourselves hopefully I can take some of those concerns away.
+## Artificial Intelligence
 
-## Looking forward
+One of the main focuses was the responsible implementation of AI, emphasizing transparency and the importance of a “human-in-the-loop” approach. A Q&A session and panel discussion on Drupal AI brought forward both excitement and concerns, showing the community’s dedication to ethical AI integration. This approach ensures AI remains an empowering tool while respecting user autonomy and security.
+
+As Open Social has been working closely with FreelyGive, the maintainers of the Drupal AI module, we have already made significant strides in AI integration. The insights shared in Barcelona emphasized the necessity of responsibility in AI—keeping users informed and involved throughout. This approach will likely shape AI-driven tools for Drupal in ways that align with the values of transparency and trustworthiness, assuaging any concerns around its impact on content management.
+
+While many demos, understandably, were dedicated to Drupal CMS, the groundwork here is usable for many more use cases. AI can help create more dynamic and personalized experiences by tailoring content to individual user interests, enhancing community engagement. For instance, AI-powered recommendations, adaptive search, and behavior-based content delivery can ensure users find relevant discussions, events, and resources, making the platform feel more intuitive and responsive. Automation tools for content moderation and user support can streamline operations, allowing community managers to focus on nurturing real interactions. By embedding ethical, transparent AI into these experiences, Drupal is set to empower us to build more connected, vibrant, and user-centric communities.
+
+## Looking Forward
 
 As the event concluded with the announcement that Vienna will host DrupalCon Europe 2025, I found myself already looking forward to the next opportunity to reunite with the community and continue pushing Drupal to new heights. Whether it was through sessions, networking, or exploring the city, this year’s DrupalCon Barcelona truly showcased the best of what our community has to offer.
 
+You can expect a lot more in-depth posts about the above, so stay tuned.
