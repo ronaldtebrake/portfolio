@@ -7,7 +7,7 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 # Using
 
 * [Astro](https://astro.build/)
-* [Tailwind]
+* [Tailwind](https://tailwindcss.com/)
 
 
 ## Credits because it's build with code or inspiration from:
