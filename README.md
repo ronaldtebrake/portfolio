@@ -25,7 +25,10 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 * https://aidankinzett.com/blog/astro-open-graph-image/
 
 ### Analytics:
-* [https://www.simpleanalytics.com/](https://www.simpleanalytics.com/)
+* [Simple Analytics](https://www.simpleanalytics.com/?referral=wubuq)
+
+### Newsletter:
+* [Kit](https://kit.com/)
 
 # TODO:
 - [ ] Content
