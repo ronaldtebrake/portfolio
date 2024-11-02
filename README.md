@@ -1,17 +1,27 @@
 # Ronald te Brake's Blog / Portfolio / Playground.
 
+Hi there :wave:
+
+Lovely to see you're checking out my repo, I couldn't have done it without the following:
+
+# Using
+
+* [Astro](https://astro.build/)
+* [Tailwind]
+
+
 ## Credits because it's build with code or inspiration from:
 
 ### Components:
+* https://tailwindui.com/
 * https://shuffle.dev
 * https://www.bestastrothemes.com/theme/m6v3l9-astro-theme-stone/
-* simpleanalytics
 
-### PWA:
+### Progressive web app:
 * https://github.com/tatethurston/astrojs-service-worker#readme
 * https://github.com/alextim/astro-lib/tree/main/packages/astro-webmanifest#readme
 
-### Open Graph:
+### Open Graph images:
 * https://aidankinzett.com/blog/astro-open-graph-image/
 
 ### Analytics:
