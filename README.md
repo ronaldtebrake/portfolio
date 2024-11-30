@@ -31,6 +31,12 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 ### Newsletter:
 * [Kit](https://kit.com/)
 
+### Generated blog images
+* Using DALLE with the prompt:
+Generate a featured image for a blog post titled '[title]' reflecting '[description]', minimalistic.
+
+
+
 # TODO:
 - [ ] Content
 - [ ] Small about me teaser under content
