@@ -16,6 +16,7 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 * https://tailwindui.com/
 * https://shuffle.dev
 * https://www.bestastrothemes.com/theme/m6v3l9-astro-theme-stone/
+* https://uxwing.com/
 
 ### Progressive web app:
 * https://github.com/tatethurston/astrojs-service-worker#readme
