@@ -22,7 +22,7 @@ module.exports = {
             black: '#000',
             white: '#fff',
             'product': 'yellow',
-            'processes': 'red',
+            'process': 'red',
             'people': 'black',
             current: 'currentColor',
             transparent: 'transparent',
@@ -894,9 +894,9 @@ module.exports = {
 		require('@tailwindcss/typography'),
 		plugin(function astroComponentsPlugin({ addComponents, theme }) {
 			addComponents({
-				".processes": {
+				".process": {
 					'&:hover': {
-						backgroundColor: theme("colors.processes"),
+						backgroundColor: theme("colors.process"),
             opacity: 0.2,
 					},
 				},

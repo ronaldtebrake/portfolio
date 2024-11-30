@@ -56,16 +56,16 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 categoryColor: {
     'drupal': '#0077C0',
     'product': 'yellow',
-    'processes': 'red',
+    'process': 'red',
 },
 ```
 AND
 ```
 addComponents({
-    ".processes": {
-        textDecoration: theme("categoryColor.processes"),
+    ".process": {
+        textDecoration: theme("categoryColor.process"),
         "&::before": {
-            backgroundColor: theme("categoryColor.processes"),
+            backgroundColor: theme("categoryColor.process"),
         },
     },
     ".drupal": {
@@ -82,6 +82,6 @@ addComponents({
     },
 })
 ```
-3. Add it to `config.ts` as allowed enum option. `category: z.enum(['product', 'drupal', 'processes']),`
+3. Add it to `config.ts` as allowed enum option. `category: z.enum(['product', 'drupal', 'process']),`
 
 This should ensure this category is chosen as class name for the links and it's CSS.

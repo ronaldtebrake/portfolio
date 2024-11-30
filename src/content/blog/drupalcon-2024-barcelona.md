@@ -4,7 +4,7 @@ description: "Everything about my experiences at DrupalCon Barcelona 2024."
 pubDate: "Oct 03 2024"
 heroImage: "./assets/antoni-gaudi-community-experience-building-dall-e.webp"
 category: "product"
-featured: true
+tags: ["events"]
 ---
 
 I had a wonderful time reconnecting with my peers at DrupalCon Barcelona 2024! From reuniting with old friends and making new connections to gaining insights into the future of Drupal, the event offered a lovely balance of networking and professional development, giving me all kinds of inspiration and motivation. So much so, I decided it’s about time I start sharing more through my own blog, and here we are.

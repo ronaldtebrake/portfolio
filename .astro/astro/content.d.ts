@@ -151,6 +151,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"context-is-key-but-missing.md": {
+	id: "context-is-key-but-missing.md";
+  slug: "context-is-key-but-missing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "drupalcon-2024-barcelona.md": {
 	id: "drupalcon-2024-barcelona.md";
   slug: "drupalcon-2024-barcelona";
