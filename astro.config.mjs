@@ -21,7 +21,7 @@ export default defineConfig({
     webmanifest({
       name: 'Blog by Ronald te Brake',
       icon: {
-        "src": "src/images/webmanifest-icon.png",
+        "src": "src/images/maskable-icon.png",
         "sizes": "196x196",
         "type": "image/svg",
         "purpose": "maskable"
