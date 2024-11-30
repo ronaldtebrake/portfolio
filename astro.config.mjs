@@ -21,7 +21,7 @@ export default defineConfig({
     webmanifest({
       name: 'Blog by Ronald te Brake',
       icon: {
-        "src": "src/images/logo-letter.svg",
+        "src": "src/images/webmanifest-icon.png",
         "sizes": "196x196",
         "type": "image/svg",
         "purpose": "maskable"
@@ -29,7 +29,7 @@ export default defineConfig({
       short_name: 'Blog by Ronald',
       description: 'People, process and product development by Ronald te Brake',
       start_url: '/',
-      theme_color: '#FFFFFF',
+      theme_color: '#F7F7F7',
       background_color: '#F7F7F7',
       display: 'standalone',
     }),
