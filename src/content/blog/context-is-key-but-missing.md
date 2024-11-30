@@ -1,6 +1,6 @@
 ---
 title: "Context is key, but often missing"
-description: "A Story About Decisions and Documentation and how I became my own worst enemy"
+description: "A Story about decisions and documentation and how I became my own worst enemy"
 pubDate: "Nov 30 2024"
 heroImage: "./assets/A-minimalistic-featured-image-for-a-blog-post-visually-reflecting-how-context-clarifies-a-story.webp"
 category: "process"
@@ -8,7 +8,7 @@ tags: ["documentation"]
 featured: true
 ---
 
-## A Story About Decisions and Documentation
+## A Story about decisions and documentation
 
 Imagine this: You’re deep into a sprint on a project that’s been running for a few years. You open the codebase, eager to solve a bug, only to be met with a decision that stops you in your tracks. 
 
@@ -26,7 +26,7 @@ Fast forward. We're now running in to performance issues, it's just not scalable
 
 But could I remember why it was done the way it was? Nope. Was there a note, a Slack thread, or even a vague comment in the code? Also nope. My future self was left stranded by my past self’s haste.
 
-## Why Documenting Decisions Matters
+## Why documenting decisions matters
 
 Every project is shaped by countless decisions. What language to use, which library or module to adopt, how to structure an API. These choices don’t happen in a vacuum. They’re shaped by constraints: deadlines, budgets, resources, knowledge, and tools. But those constraints evolve, and without context, decisions can quickly look arbitrary or even wrong.
 
