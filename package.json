@@ -14,7 +14,7 @@
     "@alpinejs/collapse": "^3.13.0",
     "@astrojs/mdx": "^3.1.7",
     "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.1",
     "@playform/compress": "^0.1.6",
     "@tailwindcss/line-clamp": "^0.4.4",

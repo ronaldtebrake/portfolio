@@ -45,6 +45,8 @@ if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/bl
 
 <meta name="generator" content={Astro.generator} />
 
+<link rel="sitemap" href="/sitemap-index.xml" />
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
@@ -52,6 +54,8 @@ if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/bl
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="author" content="Ronald te Brake" />
+<meta name="robots" content="index, follow" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
