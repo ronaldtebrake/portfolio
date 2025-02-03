@@ -2,7 +2,7 @@
 title: "Context is key, but often missing"
 description: "A Story about decisions and documentation and how I became my own worst enemy"
 pubDate: "Nov 30 2024"
-heroImage: "./assets/A-minimalistic-featured-image-for-a-blog-post-visually-reflecting-how-context-clarifies-a-story.webp"
+heroImage: "./assets/context-is-key.webp"
 category: "process"
 tags: ["documentation"]
 ---

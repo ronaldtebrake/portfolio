@@ -3,8 +3,8 @@ title: "Is there an AI in team? Using AI in Software Engineering"
 description: "My thoughts on if and how we can start implementing AI in our engineering teams."
 pubDate: "Feb 02 2025"
 heroImage: "./assets/is-there-ai-in-team.webp"
-category: "product"
-tags: ["engineering", "ai"]
+category: "people"
+tags: ["process", "ai", "teams"]
 featured: true
 ---
 
