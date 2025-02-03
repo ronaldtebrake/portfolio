@@ -156,21 +156,21 @@ declare module 'astro:content' {
   slug: "context-is-key-but-missing";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 "drupalcon-2024-barcelona.md": {
 	id: "drupalcon-2024-barcelona.md";
   slug: "drupalcon-2024-barcelona";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
-"there-is-no-ai-in-team.md": {
-	id: "there-is-no-ai-in-team.md";
-  slug: "there-is-no-ai-in-team";
+"is-there-an-ai-in-team.md": {
+	id: "is-there-an-ai-in-team.md";
+  slug: "is-there-an-ai-in-team";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -182,5 +182,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = never;
 }
