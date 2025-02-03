@@ -5,7 +5,6 @@ pubDate: "Nov 30 2024"
 heroImage: "./assets/A-minimalistic-featured-image-for-a-blog-post-visually-reflecting-how-context-clarifies-a-story.webp"
 category: "process"
 tags: ["documentation"]
-featured: true
 ---
 
 ## A Story about decisions and documentation

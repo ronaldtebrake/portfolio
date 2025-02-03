@@ -53,3 +53,18 @@
   font-display: swap;
   font-style: normal;
 }
+
+code {
+  font-family: monospace;
+}
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+  font-weight: 300 !important;
+}
