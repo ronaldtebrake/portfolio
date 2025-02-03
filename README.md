@@ -32,9 +32,7 @@ Lovely to see you're checking out my repo, I couldn't have done it without the f
 * [Kit](https://kit.com/)
 
 ### Generated blog images
-* Using DALLE with the prompt:
-Generate a featured image for a blog post titled '[title]' reflecting '[description]', minimalistic.
-
+* Using Vectr, Bungee as a font, #F7F7F7 as a background color, #000000 as a text color
 
 
 # TODO:
