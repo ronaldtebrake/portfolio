@@ -2,19 +2,37 @@
 type Props = CollectionEntry<'blog'>['data'];
 
 import { Image } from 'astro:assets';
+import productImage from '@/content/blog/assets/product.webp';
+import peopleImage from '@/content/blog/assets/people.webp';
+import processImage from '@/content/blog/assets/process.webp';
 
 const { title, url, pubDate, heroImage, category, description } = Astro.props;
 
+const getFallbackImage = (category: string) => {
+  switch (category) {
+    case 'product': return productImage;
+    case 'people': return peopleImage;
+    case 'process': return processImage;
+    default: return productImage;
+  }
+};
 ---
 
 <div class="w-full lg:w-1/2 px-4 sm:pb-4">
   <a class="group block" href={url}>
-    {heroImage && (
-      <div class="relative mb-6 rounded-4xl overflow-hidden">
-        <Image src={heroImage} alt="" class="block w-full h-72 object-cover" />
-        <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10 group-hover:bg-black']}></div>
-      </div>
-    )}
+    <div class="relative mb-6 rounded-4xl overflow-hidden">
+      {heroImage ? (
+        <>
+          <Image src={heroImage} alt="" class="block w-full h-72 object-cover" />
+          <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10 group-hover:bg-black']}></div>
+        </>
+      ) : (
+        <>
+          <Image src={getFallbackImage(category)} alt="" class="block w-full h-72 object-cover" />
+          <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10 group-hover:bg-black']}></div>
+        </>
+      )}
+    </div>
     <div class="grid gap-1 grid-cols-4 text-sm mb-3">
       <time datetime={pubDate} class="flex-auto min-w-[60px]">
         {new Date(pubDate).toLocaleDateString('en-us', {

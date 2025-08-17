@@ -2,18 +2,34 @@
 type Props = CollectionEntry<'blog'>['data'];
 
 import { Image } from 'astro:assets';
+import productImage from '@/content/blog/assets/product.webp';
+import peopleImage from '@/content/blog/assets/people.webp';
+import processImage from '@/content/blog/assets/process.webp';
 
 const { title, url, pubDate, heroImage, description, category } = Astro.props;
 
+const getFallbackImage = (category: string) => {
+  switch (category) {
+    case 'product': return productImage;
+    case 'people': return peopleImage;
+    case 'process': return processImage;
+    default: return productImage;
+  }
+};
 ---
 
 <div class="bg-coolGray-50 dark:bg-coolGray-300 hidden items-center justify-center rounded-3xl lg:flex w-full p-10">
     <a class="group" href={url}>    
         <div class="bg-white dark:bg-primary-950 rounded-3xl w-full p-8 relative">
             <span class="animated-banner inline-block right-0 z-50 rotate-[25deg] absolute rounded-[0.27rem] bg-primary-100 p-[0.25em] text-lg font-bold leading-none text-primary-700">Featured post</span>
-            {heroImage && (
+            {heroImage ? (
                 <div class="group flex flex-col mb-5 overflow-hidden rounded-xl">
                     <Image src={heroImage} class="transform" alt="" />
+                </div>
+            ) : (
+                <div class="group flex flex-col mb-5 overflow-hidden rounded-xl relative">
+                    <Image src={getFallbackImage(category)} class="transform" alt="" />
+                    <div class:list={['absolute left-0 top-0 h-full w-full group-hover:bg-opacity-10 group-hover:bg-black']}></div>
                 </div>
             )}
             <div class="grid gap-1 grid-cols-4 text-sm mb-3">
