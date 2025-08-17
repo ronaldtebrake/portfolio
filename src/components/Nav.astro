@@ -111,7 +111,7 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
     <div class="grid grid-cols-1 gap-16 pt-6 sm:pb-6 lg:pb-24 lg:grid-cols-2 lg:pt-12" id="links">
       {
         featuredBlogEntry.map((post, index) => index < 1 && (
-          <FeaturedPost url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} description={post.data.description} category={post.data.category}, heroImage={post.data.heroImage} />
+          <FeaturedPost url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} description={post.data.description} category={post.data.category} heroImage={post.data.heroImage} />
         ))
       }  
 
@@ -129,7 +129,7 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
                   <span class="group-hover:underline">{link.name}</span>
                 </div>
                 <span class="group-hover:rotate-45 transform transition duration-100 h-6 w-6 sm:h-8 sm:w-8">
-                  <svg viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
+                  <svg viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-primary-600 dark:stroke-primary-600">
                     <path d="M30 3L3 30" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M30 27.758V3H5.24196" stroke="currentColor" stroke-width="4.3875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
@@ -165,10 +165,12 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
 
       // Toggle the menu icon
       const myElement = document.getElementById("triggerToggle");
-      for (const child of myElement.children) {
-        if (child instanceof SVGElement) {
-          child.classList.toggle('hidden');
-          child.classList.toggle('block');
+      if (myElement) {
+        for (const child of myElement.children) {
+          if (child instanceof SVGElement) {
+            child.classList.toggle('hidden');
+            child.classList.toggle('block');
+          }
         }
       }
 
@@ -176,9 +178,11 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
       const linksHeight = menuLinks?.getBoundingClientRect().height;
       const containerHeight = menuContainer?.getBoundingClientRect().height;
       
-      containerHeight === 0
-        ? menuContainer.style.height = `${linksHeight}px`
-        : menuContainer.style.height = 0;
+      if (containerHeight === 0 && menuContainer) {
+        menuContainer.style.height = `${linksHeight}px`;
+      } else if (menuContainer) {
+        menuContainer.style.height = '0';
+      }
     });
   }
 

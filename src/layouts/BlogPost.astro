@@ -11,7 +11,7 @@ const { title, description, heroImage } = Astro.props;
         <div class="mx-auto max-w-3xl text-base leading-7">
             <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue prose lg:prose-xl dark:text-primary-200 text-coolGray-600">
                 <h1 class="dark:text-primary-200 text-primary-950">{title}</h1>
-                <Image src={heroImage} class="transform" alt="" />
+                {heroImage && <Image src={heroImage} class="transform" alt="" />}
                 <slot />
             </article>
         </div>

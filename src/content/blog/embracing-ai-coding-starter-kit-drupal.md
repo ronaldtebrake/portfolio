@@ -2,7 +2,6 @@
 title: "Embracing an AI Coding Starter Kit for Drupal (Inspired by Laravel Boost)"
 description: "Exploring how Drupal can leverage AI assistance through a unified coding starter kit, inspired by Laravel's innovative approach."
 pubDate: "Aug 17 2025"
-heroImage: "./assets/ai-starterkit.webp"
 category: "process"
 tags: ["ai", "drupal", "development"]
 featured: true

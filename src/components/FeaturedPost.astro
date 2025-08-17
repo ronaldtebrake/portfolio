@@ -11,9 +11,11 @@ const { title, url, pubDate, heroImage, description, category } = Astro.props;
     <a class="group" href={url}>    
         <div class="bg-white dark:bg-primary-950 rounded-3xl w-full p-8 relative">
             <span class="animated-banner inline-block right-0 z-50 rotate-[25deg] absolute rounded-[0.27rem] bg-primary-100 p-[0.25em] text-lg font-bold leading-none text-primary-700">Featured post</span>
-            <div class="group flex flex-col mb-5 overflow-hidden rounded-xl">
-                <Image src={heroImage} class="transform" alt="" />
-            </div>
+            {heroImage && (
+                <div class="group flex flex-col mb-5 overflow-hidden rounded-xl">
+                    <Image src={heroImage} class="transform" alt="" />
+                </div>
+            )}
             <div class="grid gap-1 grid-cols-4 text-sm mb-3">
                 <time datetime={pubDate} class="flex-auto min-w-[60px]">
                   {new Date(pubDate).toLocaleDateString('en-us', {

@@ -1,11 +1,12 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
 
 const title = 'Blog';
 const description = 'All articles.';
-const permalink = `${Astro.site.href}blog`;
+const permalink = Astro.site?.href ? `${Astro.site.href}blog` : '/blog';
 const current = 'blog';
 
 const posts = (await getCollection('blog')).sort(
@@ -35,7 +36,7 @@ const posts = (await getCollection('blog')).sort(
       <div>
       {
         posts.map((post) => (
-          <BlogPostTeaser url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category}, heroImage={post.data.heroImage}, description={post.data.description} />
+          <BlogPostTeaser url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category} heroImage={post.data.heroImage} description={post.data.description} />
         ))
       }
       </div>
