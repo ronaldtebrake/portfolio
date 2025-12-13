@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Tags';
+const description = 'All blog post tags.';
+const permalink = Astro.site?.href ? `${Astro.site.href}tags` : '/tags';
+
+const posts = await getCollection('blog');
+const tags = new Set(posts.flatMap(post => post.data.tags || []));
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-16">
+        <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">All Tags</h1>
+      </div>
+      <div>
+        {Array.from(tags).map(tag => (
+          <a 
+            key={tag} 
+            href={`/tags/${tag}`}
+            class="mr-2 mb-2 inline-block px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

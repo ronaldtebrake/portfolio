@@ -23,7 +23,7 @@ export default defineConfig({
       icon: {
         "src": "src/images/maskable-icon.png",
         "sizes": "196x196",
-        "type": "image/svg",
+        "type": "image/png",
         "purpose": "maskable"
       },
       short_name: 'Blog by Ronald',
