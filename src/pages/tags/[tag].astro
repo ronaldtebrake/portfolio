@@ -4,6 +4,15 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
 
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const tags = new Set(allPosts.flatMap(post => post.data.tags || []));
+  
+  return Array.from(tags).map((tag) => ({
+    params: { tag },
+  }));
+}
+
 const { tag } = Astro.params;
 
 if (!tag) {

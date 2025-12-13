@@ -1,6 +1,6 @@
 
-import __ASTRO_IMAGE_IMPORT_Z1hC1Om from "./assets/context-is-key.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcontext-is-key-but-missing.md";
 import __ASTRO_IMAGE_IMPORT_16uAdB from "./assets/antoni-gaudi-community-experience-building-dall-e.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdrupalcon-2024-barcelona.md";
+import __ASTRO_IMAGE_IMPORT_Z1hC1Om from "./assets/context-is-key.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcontext-is-key-but-missing.md";
 import __ASTRO_IMAGE_IMPORT_2bpMOK from "./assets/is-there-ai-in-team.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fis-there-an-ai-in-team.md";
-export default new Map([["./assets/context-is-key.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcontext-is-key-but-missing.md", __ASTRO_IMAGE_IMPORT_Z1hC1Om], ["./assets/antoni-gaudi-community-experience-building-dall-e.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdrupalcon-2024-barcelona.md", __ASTRO_IMAGE_IMPORT_16uAdB], ["./assets/is-there-ai-in-team.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fis-there-an-ai-in-team.md", __ASTRO_IMAGE_IMPORT_2bpMOK]]);
+export default new Map([["./assets/antoni-gaudi-community-experience-building-dall-e.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdrupalcon-2024-barcelona.md", __ASTRO_IMAGE_IMPORT_16uAdB], ["./assets/context-is-key.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcontext-is-key-but-missing.md", __ASTRO_IMAGE_IMPORT_Z1hC1Om], ["./assets/is-there-ai-in-team.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fis-there-an-ai-in-team.md", __ASTRO_IMAGE_IMPORT_2bpMOK]]);
 		
