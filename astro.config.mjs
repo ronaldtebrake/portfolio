@@ -6,6 +6,7 @@ import serviceWorker from "astrojs-service-worker";
 import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
+import mermaid from 'astro-mermaid';
 
 import playformCompress from "@playform/compress";
 
@@ -33,7 +34,11 @@ export default defineConfig({
       background_color: '#F7F7F7',
       display: 'standalone',
     }),
-    playformCompress()
+    playformCompress(),
+    mermaid({
+      theme: 'forest',
+      autoTheme: true
+    })
   ],
   prefetch: {
     prefetchAll: true
