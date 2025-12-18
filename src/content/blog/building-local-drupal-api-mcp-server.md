@@ -114,23 +114,31 @@ Those tools give clients rich, structured access to the API docs — something n
 
 ## Example
 
-Here's a visual comparison showing how the MCP server improves AI assistance with Drupal API documentation for the specific use case where [New hook_entity_duplicate() and hook_ENTITY_TYPE_duplicate() hooks](https://www.drupal.org/node/3268812) were added in 11.2.x:
+Here’s a concrete example that highlights the problem and the impact of version-aware documentation.
+
+In Drupal `11.2.x` [New hook_entity_duplicate() and hook_ENTITY_TYPE_duplicate() hooks](https://www.drupal.org/node/3268812) were introduced. When asking an AI assistant about entity duplication behavior, the correct answer depends entirely on whether those hooks exist in the current Drupal version.
 
 [![Drupal 10 without MCP](./assets/D10-withoutMCP-small.png)](/images/blog/D10-withoutMCP.png)
 
-*Without MCP: Generic AI responses that may not match your Drupal version, tested in a Drupal 10 environment*
+*Drupal 10 - without MCP usage:*
+
+The AI suggests the actual hooks that do not exist in Drupal 10. The answer sounds plausible, but it is based on newer APIs and therefore incorrect for this project.
 
 [![Drupal 10 with MCP](./assets/D10-withMCP-small.png)](/images/blog/D10-withMCP.png)
 
-*With MCP: Version-specific, accurate API documentation for Drupal 10 environment*
+*Drupal 10 With MCP:*
+
+With MCP enabled, the AI has access to Drupal 10–specific API documentation. The response correctly avoids the new hooks and instead references APIs that actually exist in this version.
 
 [![Drupal 11 with MCP](./assets/D11-withMCP-small.png)](/images/blog/D11-withMCP.png)
 
-*With MCP: Version-specific, accurate API documentation for Drupal 11*
+*Drupal 11 With MCP:*
+
+In a Drupal 11 environment, the same question now produces a different, version-appropriate answer. The AI correctly references the newly introduced hooks, because MCP exposes the relevant documentation for Drupal 11.2.x.
 
 ## Where This Fits in the Drupal AI Landscape
 
-This experiment reinforces an idea that keeps coming up when working with AI in real projects: better assistance is not all about better models or more elaborate prompts. Context also matters.
+This experiment reinforces an idea that keeps coming up when working with AI in real projects: better assistance is not all about better models or more elaborate prompts. Context matters more than most people expect.
 
 By making Drupal’s API documentation version-aware, searchable, and locally accessible through MCP, AI tools can work with the same information an experienced Drupal developer would actively look up. That shifts AI from guessing based on training data to answering based on the actual platform and version you are using.
 
