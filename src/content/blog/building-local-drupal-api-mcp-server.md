@@ -7,21 +7,29 @@ tags: ["ai", "drupal", "mcp", "development"]
 featured: true
 ---
 
-A while back, I wrote about [embracing AI in coding](/blog/embracing-ai-coding-starter-kit-drupal) and shared an idea about a starter kit for Drupal developers that tightly integrates AI assistance into the Drupal development workflow. Since then I've been experimenting with taking that idea further, specifically how to bring semantic search of Drupal's API documentation into your local development workflow.
+A while back, I wrote about [embracing AI in coding](/blog/embracing-ai-coding-starter-kit-drupal) and shared an idea for a Drupal starter kit that tightly integrates AI assistance into the development workflow. Since then, I have been pushing on a very specific problem that keeps coming up when using AI with Drupal.
 
-Today I'm excited to share a proof of concept that's shaping into something nice: a locally hosted MCP server that gives AI assistants intelligent access to version-specific Drupal API docs.
+Ask an AI assistant a seemingly simple Drupal question and you often get an answer that is almost right, but subtly wrong. A hook that no longer exists. An example that only applies to an older major version. Advice that ignores how Drupal actually structures its APIs today.
+
+The root cause is usually not the model itself, but context. The AI does not know which Drupal version you are working with, and it does not have reliable access to the API documentation that matters for your project.
+
+Over the last months I have been experimenting with a way to fix that. The result is a proof of concept that is starting to feel genuinely useful: a locally hosted MCP server that gives AI assistants intelligent, version-specific access to Drupal’s API documentation, directly from your development environment.
 
 ## Why This Started
 
-At first glance it looks like modern AI models and tools should make our work easier straight away. Large language models are trained on huge amounts of code and documentation from the public web, so it sounds like they should know everything we need. In reality this is not always true.
+At first glance it seems like modern AI tools should solve this problem automatically. Large language models are trained on vast amounts of public code and documentation, so it is reasonable to expect them to answer Drupal questions correctly.
 
-The first issue is that the training data of a model does not always match the version you are working with. You might be working on a Drupal 10 or Drupal 11 project, while the AI gives answers based on older or mixed information. This means the suggestions can be incorrect for your code base and may send you in the wrong direction.
+In practice, that assumption breaks down for two related reasons.
 
-The second issue is how AI tools see your project. Most tools can only index what is available in your local workspace. In a typical Drupal setup with Composer and Git, a lot of core API documentation is not part of the project files that your IDE indexes. Important functions, hooks, or documentation blocks are simply not visible. As a result the editor mainly relies on the model itself, and sometimes on web search, instead of real project context.
+First, AI models are trained on a mixture of Drupal versions. When you are working on a specific Drupal 10 or Drupal 11 project, the answers you get may be based on outdated or mixed information. Even small version differences can lead to incorrect suggestions.
 
-In short, the tools we use every day often do not fully understand the context we are working in. The model may know too much irrelevant information and not enough about the specific Drupal version that matters. The tool only knows what it can see locally, and very often it does not see enough. What I wanted was a way for AI to access the right Drupal documentation for the right version and to give answers that matter to my current project, right inside my editor.
+Second, AI tools have limited visibility into Drupal’s core APIs at development time. In a typical Composer-based setup, much of Drupal’s API is just a dependency and the actual files are not part of your IDE indexes. That means the assistant often relies on its training data or web search, rather than the actual APIs available to your project.
+
+The result is an assistant that knows a lot about Drupal in general, but too little about the exact version you are working with. What I wanted was a way to make the right API documentation for the right Drupal version available to AI tools, locally and directly, as part of the development workflow.
 
 ## How It Works: from Core Docs to Your IDE
+
+The key idea is simple: precompute documentation embeddings once per Drupal version, then let AI query them locally at runtime.
 
 ```mermaid
 flowchart TB
@@ -81,6 +89,7 @@ That means asking things like "What hook runs when an entity is saved?" returns 
 Everything in this stack is locally hosted and open-source:
 
 - [MCP PHP SDK](https://github.com/modelcontextprotocol/php-sdk) for the MCP
+
 - PHP-Parser + DocBlock extraction for scraping API docs using [nikic/PHP-Parser](https://github.com/nikic/PHP-Parser)
 - Redis with [redis-applied-ai/redis-vector-php](https://github.com/redis-applied-ai/redis-vector-php) for storage
 - [Ollama](https://ollama.com/) for embedding generation (no API keys, local models)
@@ -121,9 +130,12 @@ Here's a visual comparison showing how the MCP server improves AI assistance wit
 
 ## Where This Fits in the Drupal AI Landscape
 
-With a local MCP server like this, the path toward a true Drupal AI coding starter kit becomes clearer. We now have a way to serve real context to AI tools, and that's the foundation for version-aware codex suggestions, refactoring assistants, and even AI-driven scaffolding that respects Drupal's standards.
+This experiment reinforces an idea that keeps coming up when working with AI in real projects: better assistance is not all about better models or more elaborate prompts. Context also matters.
 
-There are other MCP-related efforts in the community — for example the [Drupal MCP module](https://www.drupal.org/project/mcp) so perhaps there are possibilities for Surge to become a cloud based MCP contributed to the community, without the need for all these tools to run it locally.
+By making Drupal’s API documentation version-aware, searchable, and locally accessible through MCP, AI tools can work with the same information an experienced Drupal developer would actively look up. That shifts AI from guessing based on training data to answering based on the actual platform and version you are using.
 
-If you're curious, [I would love to hear your thoughts on Drupal.org](https://www.drupal.org/project/surge/issues/3563383#comment-16384867) or checkout the project at [ronaldtebrake/surge-mcp-dev](https://github.com/ronaldtebrake/surge-mcp-dev/)
+This approach could form the foundation of a Drupal AI starter kit that offers version-correct suggestions, safer refactoring, and scaffolding that follows Drupal conventions instead of fighting them.
 
+There are already related efforts in the community, such as the [Drupal MCP module](https://www.drupal.org/project/mcp) module, and I think there is room to explore how something like Surge could evolve into a shared, possibly cloud-hosted MCP service for Drupal. But even in its current local-only form, this experiment already proves the value of version-aware documentation access.
+
+If you are interested in where this could go next, [I would love to continue the conversation on Drupal.org](https://www.drupal.org/project/surge/issues/3563383#comment-16384867), or you can explore the code yourself in the surge-mcp-dev repository at [ronaldtebrake/surge-mcp-dev](https://github.com/ronaldtebrake/surge-mcp-dev/).
