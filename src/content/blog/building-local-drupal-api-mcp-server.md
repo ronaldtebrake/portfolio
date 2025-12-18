@@ -2,7 +2,8 @@
 title: "Version-Aware Drupal Docs for AI"
 description: "Building a locally hosted MCP server that gives AI assistants intelligent, version-specific access to Drupal API documentation all running entirely on your machine."
 pubDate: "Dec 16 2025"
-category: "process"
+heroImage: "./assets/building-version-aware-mcp.webp"
+category: "product"
 tags: ["ai", "drupal", "mcp", "development"]
 featured: true
 ---
