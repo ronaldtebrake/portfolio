@@ -36,7 +36,7 @@ Each contributed skill in this library is automatically validated against the sp
 
 Once you have a library of available skills, you probably don't want to load every single skill into your project all at once, as Agents will be able to automatically discover them. Not every project needs every skill, or you might have your own custom tweaks to tailor skills to your projects needs. This is where configuration and aggregation come in.
 
-I've added a tool to Drupal Surge to help with this. This allows you to collect and configure the skills you want for your project, and copy them into your project's skills folder, all based on Composer and PHP. With Surge, you can pick which skills to include, rather than blindly pulling in the entire library. For example, if you're not using Drupal Commerce, you probably don't need any Commerce related AI skill that might be in the library loaded on your system. Surge lets you specify that. It scans for any skills provided by your enabled modules or by the Agentic Skills library, and then aggregates only the ones you've chosen into the `.claude/skills` directory that the agent will actually use. This gives developers control and keeps the AI's skill set tailored to the project's needs.
+I've added a tool to Drupal Surge to help with this. This allows you to collect and configure the skills you want for your project, and copy them into your project's skills folder, all based on Composer and PHP. With Surge, you can pick which skills to include, rather than blindly pulling in the entire library. For example, if you have your own coding standards, you probably don't need any curated  skill that might be in the library loaded on your system. Surge lets you specify that. It scans for any skills provided by your enabled modules or by the Agentic Skills library, and then aggregates only the ones you've chosen into the `.claude/skills` directory that the agent will actually use. This gives developers control and keeps the AI's skill set tailored to the project's needs.
 
 The ability to configure skill selection is important for a few reasons:
 
@@ -53,7 +53,7 @@ Agent Skills represent a fresh approach to integrating AI with Drupal developmen
 
 By adopting the open Agent Skills specification, we keep our AI context dynamic and efficient, only pulling in what's needed when it's needed and it's supported by many tools already, allowing you to pick whichever Agent you want.
 
-There are still challenges to work through. We need to refine how skills are distributed, so they're easy to find and share and version. How they're aggregated, so each project can flexibly include the right set. But the work has begun. With a shared library of skills and tools like Surge for assembly, we're laying the groundwork. This collaboration between open standards and open source community know how could significantly boost our productivity, while keeping AI outputs aligned with Drupal best practices.
+There are still challenges to work through. We need to refine how skills are distributed, so they're easier to find, share and version. We need to refine how they're aggregated, right now it's aggregated from `.claude/skills` or `surge/skills` directories, but we should standardize on this, and hopefully the specification helps us there. But the work has begun. With a shared library of skills and tools like Surge for assembly, we're laying the groundwork. This collaboration between open standards and open source community know how could significantly boost our productivity, while keeping AI outputs aligned with Drupal best practices.
 
 In short, Agent Skills give us a path to make AI development assistants smarter, and our own development experience smoother. A win win for everyone involved in developing with Drupal.
 
@@ -68,4 +68,6 @@ Proposal: First class support for agent skills
 - Cursor Blog  
 Dynamic context discovery  
 [https://cursor.com/blog/dynamic-context-discovery](https://cursor.com/blog/dynamic-context-discovery)
-
+- Github Agent Skills
+Proposal: include a standard folder where agent skills should be #15
+[Proposal: include a standard folder where agent skills should be #15](https://github.com/agentskills/agentskills/issues/15)
