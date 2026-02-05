@@ -72,7 +72,7 @@ As scores and comments are stored per revision, trends can be visualised, helpin
 
 The entire content lifecycle, from draft to published, including all revisions and feedback can be captured in a knowledge graph, enabling historically grounded and referenced learnings which we can  for editors in the future.
 
-![Knowledge graph visualization](./assets/accordion-5.webp)
+![Knowledge graph visualization](./assets/neo4j-accordion-5.webp)
 
 <small>*Knowledge graph: By modeling content, revisions, feedback, and guidelines as interconnected nodes, we can capture relationships and enable AI to learn from historical patterns.*</small>
 
