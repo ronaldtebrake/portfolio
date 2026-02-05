@@ -48,7 +48,7 @@ During the hackathon, we built a prototype called **ACE** (Augmented Content Edi
 
 <small>*Configuring AI contexts: Guidelines can be set up and managed per organisation or team, ensuring the AI assistant follows the right standards.*</small>
 
-Using FlowDrop (`drupal/flowdrop`) we we're able to tie the entire workflow together, from the entity being triggered to getting the contexts and have an LLM score it. This was done using Mistral's models, which was kindly sponsored by Mistral AI.
+Using FlowDrop (`drupal/flowdrop`) we were able to tie the entire workflow together, from the entity being triggered to getting the contexts and have an LLM score it. This was done using Mistral's models, which was kindly sponsored by Mistral AI.
 
 On a basic level this proof of concept already helps editors by giving concrete, actionable feedback on drafts.
 
