@@ -70,7 +70,7 @@ As scores and comments are stored per revision, trends can be visualised, helpin
 
 <small>*Trend visualization: Tracking scores over time helps identify patterns and areas where teams need additional support or training.*</small>
 
-The entire content lifecycle, from draft to published, including all revisions and feedback can be captured in a knowledge graph, enabling historically grounded and referenced learnings which we can  for editors in the future.
+The entire content lifecycle, from draft to published, including all revisions and feedback can be captured in a knowledge graph, enabling historically grounded and referenced learnings which we can use as human driven context to help improve the quality for editors in the future.
 
 ![Knowledge graph visualization](./assets/neo4j-accordion-5.webp)
 
