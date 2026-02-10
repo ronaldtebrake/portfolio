@@ -8,8 +8,6 @@ tags: ["ai", "hackathon", "content-editing", "workflow"]
 featured: false
 ---
 
-# A Hackathon Full of Energy, Ideas, and Real Problems
-
 Last week, we took part in the Drupal AI Hackathon – Play to Impact: 2026 edition at the European Commission, and it was genuinely a great experience from start to finish. The event was very well organised, and one thing that stood out immediately was how thoughtfully the teams were composed. Each team had a healthy mix of business folks and developers, which turned out to be a perfect balance. Ideas moved fast, but they stayed grounded.
 
 Our team chose to work on a challenge around a question that feels increasingly relevant: **how can AI better support content editors?**
