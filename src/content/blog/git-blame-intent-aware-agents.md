@@ -134,7 +134,7 @@ This is interesting because it turns traces into something you can query like ot
 
 ## I hope this becomes a standard
 
-The best future is boring:
+We don't need another tool to do this
 
 - agents emit traces in a common format
 - teams store them however they want (notes, sidecars, a store)
