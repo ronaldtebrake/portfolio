@@ -2,7 +2,7 @@
 title: "git bla(i)me: intent-aware blame for AI-generated code"
 description: "Agent-generated code makes diffs cheap. It makes explanations expensive. If agents write most of our code, we need to redefine the SDLC around the artifacts that matter: not just the diff, but the context and reasoning that produced it, and the evidence that it worked."
 pubDate: "Feb 14 2026"
-heroImage: "./assets/agent-trace.png"
+heroImage: "./assets/agent-trace-update.png"
 category: "process"
 tags: ["git", "ai", "agent-trace", "workflow", "code-review"]
 featured: true
