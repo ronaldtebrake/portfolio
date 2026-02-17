@@ -5,7 +5,7 @@ pubDate: "Feb 02 2025"
 heroImage: "./assets/is-there-ai-in-team.webp"
 category: "people"
 tags: ["process", "ai", "teams"]
-featured: true
+featured: false
 ---
 
 Artificial Intelligence (AI) tools have become increasingly common in software engineering, promising to streamline development and improve productivity. Over the past few months, I’ve been experimenting with tools like **Cline**, **GitHub Copilot**, **Cursor**. These tools can be incredibly powerful, but using them effectively requires understanding their limitations. We've been joking at Open Social for years now that we still haven't invented "human cloning" and we are somewhat limited by the resources we have, so is AI going to "finally" fix this once and for all, or perhaps even replace us?

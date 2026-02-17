@@ -5,7 +5,7 @@ pubDate: "Jan 10 2026"
 heroImage: "./assets/agent-skills.png"
 category: "product"
 tags: ["ai", "drupal", "agent-skills"]
-featured: true
+featured: false
 ---
 
 # Agent Skills: A New Way to Empower AI in Drupal

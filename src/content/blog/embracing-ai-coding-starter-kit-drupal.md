@@ -4,7 +4,7 @@ description: "Exploring how Drupal can leverage AI assistance through a unified 
 pubDate: "Aug 17 2025"
 category: "process"
 tags: ["ai", "drupal", "development"]
-featured: true
+featured: false
 ---
 
 Artificial Intelligence is rapidly changing how we write and maintain code. Recently, the Laravel community unveiled Laravel Boost, an "AI coding starter kit" that tightly integrates AI assistance into the development workflow. This forward-thinking approach has sparked excitement and it presents a huge opportunity for Drupal. As a Drupal developer, it's clear that we can supercharge our productivity by giving AI the right tools and context to generate Drupal-specific code. In this post, we'll explore what Laravel Boost offers, examine Drupal's current (but fragmented) AI solutions, and envision how a Drupal AI coding starter kit could revolutionize our development experience.

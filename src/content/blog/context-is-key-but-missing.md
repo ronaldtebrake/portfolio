@@ -5,6 +5,7 @@ pubDate: "Nov 30 2024"
 heroImage: "./assets/context-is-key.webp"
 category: "process"
 tags: ["documentation"]
+featured: false
 ---
 
 ## A Story about decisions and documentation

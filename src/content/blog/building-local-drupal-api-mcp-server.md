@@ -5,7 +5,7 @@ pubDate: "Dec 16 2025"
 heroImage: "./assets/building-version-aware-mcp.webp"
 category: "product"
 tags: ["ai", "drupal", "mcp", "development"]
-featured: true
+featured: false
 ---
 
 A while back, I wrote about [embracing AI in coding](/blog/embracing-ai-coding-starter-kit-drupal) and shared an idea for a Drupal starter kit that tightly integrates AI assistance into the development workflow. Since then, I have been pushing on a very specific problem that keeps coming up when using AI with Drupal.
