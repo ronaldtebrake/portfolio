@@ -45,9 +45,9 @@ The ecosystem is already moving this way. Tools like [Entire](https://entire.io/
 
 ## Agent Trace in one paragraph
 
-Agent Trace is an open spec that links code changes (down to file and line ranges) to the conversation that produced them. It is storage-agnostic and has extensible metadata.
+Agent Trace is an [open spec](https://agent-trace.dev/) that links code changes (down to file and line ranges) to the conversation that produced them. It is storage-agnostic and has extensible metadata.
 
-The key idea: store a lightweight record and point to the "heavy context" elsewhere, so you can keep access control and avoid filling Git with transcripts, merge conflicts etc. 
+The spec's goals: interoperability (any compliant tool can read/write attribution), granularity (file and line-level attribution), extensibility (custom metadata without breaking compatibility), and human & agent readability (no special tooling required). It explicitly does not track code ownership, training data provenance, or quality assessment—it's purely about attribution. 
 
 ## My POC: one trace per commit, stored as git notes
 
