@@ -1,5 +1,5 @@
 ---
-title: "Intent-aware git blame: per-commit agent traces as an evidence layer for autonomy"
+title: "git bla(i)me: intent-aware blame for AI-generated code"
 description: "Agent-generated code makes diffs cheap. It makes explanations expensive. If agents write most of our code, we need to redefine the SDLC around the artifacts that matter: not just the diff, but the context and reasoning that produced it, and the evidence that it worked."
 pubDate: "Feb 14 2026"
 heroImage: "./assets/agent-trace.png"
@@ -75,10 +75,7 @@ A simplified example:
 
 Here's a demo of the POC in action:
 
-<video controls width="100%">
-  <source src="./assets/agent-trace-demo.mov" type="video/quicktime">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DF7AwQ-9ZSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 You can see how I'm able to trace the entire conversation I had in my IDE. The steps the agent took, the tool calls it performed and the outcome.
 We can even see what model was used for what line. Giving me all the context I need.
