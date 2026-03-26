@@ -39,6 +39,26 @@
         "heroImage": {
           "type": "string"
         },
+        "heroImageAlt": {
+          "type": "string"
+        },
+        "heroImageCredit": {
+          "type": "object",
+          "properties": {
+            "photoBy": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "photoBy",
+            "url"
+          ],
+          "additionalProperties": false
+        },
         "tags": {
           "type": "array",
           "items": {

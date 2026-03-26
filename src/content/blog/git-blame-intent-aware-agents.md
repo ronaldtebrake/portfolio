@@ -5,7 +5,7 @@ pubDate: "Feb 14 2026"
 heroImage: "./assets/agent-trace-update.png"
 category: "process"
 tags: ["git", "ai", "agent-trace", "workflow", "code-review"]
-featured: true
+featured: false
 ---
 
 If agents end up writing most of our code, the role of engineers will shift, where our roles have never been "just" about writing code. We define intent and constraints, orchestrate agent work, verify results, and stay accountable for the outcomes.
@@ -122,8 +122,6 @@ Think: owners for auth flows, data migrations, API contracts, security hardening
 This pairs well with "agentic codeowners" ideas: low-risk PRs move faster, high-risk PRs get the right humans, and break-glass actions are explicit.
 
 Trace metadata can help you add targeted tests when intent suggests risk (auth, permissions, migrations, API changes).
-
-Important: use intent signals to increase scrutiny where needed, not to skip baseline coverage.
 
 ### 3) Observability gets closer to the SDLC
 
