@@ -33,8 +33,6 @@ If we look at the process side, AI is really stress testing how we work at a lar
 
 Inside Open Social, I can help steer some of this more directly. In open source, that is harder.
 
-Adding more gates or more automation may help with quality, but it also comes with trade offs. Imagine being a first time contributor, not even using AI, and your main interaction is with AI and automation, extra checks, or process friction. That is not a very welcoming experience to come aboard. Open source is not only about protecting quality. It is also about helping people join, learn, and grow.
-
 ## Maintainability and maintainers
 
 There is also another angle that I think matters even more over time, and that is maintainability and thus the responsibility of maintainers.
@@ -51,9 +49,10 @@ As Addy Osmani describes in Comprehension Debt - the hidden cost of AI generated
 
 > The right question for now isn’t “how do we generate more code?” It’s “how do we actually understand more of what we’re shipping?” so we can make sure our users get a consistently high quality experience.
 
-So how do we deal with that in OSS? Better quality gates? Changes to issue processes? Better tooling? Or a mix of all three and more.
-
-It at least means we do not only have a responsibility to ship and contribute things. We also have a responsibility to help the people who help us do so.
+So how do we deal with that in OSS? 
+Adding more gates, processes to our issue life cycle, or more automation may help with quality, but it also comes with trade offs. 
+Imagine being a first time contributor and your main interaction is with AI and automation. That is not a very welcoming experience to come aboard. 
+This is not only about protecting quality. It is also about helping people join, learn, and grow.
 
 ## Purgatory, then adaptation
 
