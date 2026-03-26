@@ -85,10 +85,15 @@ But the answer cannot just be fear, and it cannot just be hype.
 Part of the answer has to be responsibility.
 
 Responsibility for what we submit.
+
 Responsibility for what we approve.
+
 Responsibility for the community.
+
 Responsibility for the maintainers.
+
 Responsibility for the future health of OSS.
+
 Responsibility for not looking away from the harder parts of AI either.
 
 We may not have the full answer yet. I definitely do not.
