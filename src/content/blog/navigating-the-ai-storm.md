@@ -17,7 +17,7 @@ _A response to [the Driesnote](https://www.youtube.com/watch?v=EU6n7D91m_M) and 
 When Dries talked about AI, he framed it as the storm, but also as the way through the storm. That feels true. AI is not something small on the side anymore. It is changing how we build, how we write, how we review, and how we work together. Drupal is right in the middle of it. 
 If AI is the storm, then Drupal is the ship we are trying to keep afloat, and maintainers are often the people at the helm.
 
-So if the question is whether I am in or out, the answer is that I am already in. But it's hard to navigate.
+So if the question is whether I am in or out, the answer is that I am already in. The harder part is figuring out how to move through it responsibly.
 
 ## What we owe each other in the storm
 
@@ -50,7 +50,6 @@ And when that happens in open source, it is usually maintainers who have to carr
 As Addy Osmani describes in Comprehension Debt - the hidden cost of AI generated code[^2]
 
 > The right question for now isn’t “how do we generate more code?” It’s “how do we actually understand more of what we’re shipping?” so we can make sure our users get a consistently high quality experience.
-> That reframe has practical consequences. It means being ruthlessly explicit about what a change is supposed to do before it’s written. It means treating verification not as an afterthought but as a structural constraint. It means maintaining the system-level mental model that lets you catch AI mistakes at architectural scale rather than line-by-line. And it means being honest about the difference between “the tests passed” and “I understand what this does and why.”
 
 So how do we deal with that in OSS? Better quality gates? Changes to issue processes? Better tooling? Or a mix of all three and more.
 
@@ -75,7 +74,7 @@ For me, the way forward is not one answer. It is a mix of things.
 That last part is especially interesting to me. If we get better ways to understand how code was created, what decisions were made, and what context was used, that could really help maintainers. It will not solve everything, but it might give OSS a better way to deal with the reality we are already in.
 
 I have been playing with that kind of transparency in a small proof of concept; I wrote it up in [git bla(i)me: intent-aware blame for AI-generated code](/blog/git-blame-intent-aware-agents/). 
-Tooling like this, once added to our OSS toolset, can help us navigate the storm even better, it sure helps me get direction.
+Tooling like this, once added to our OSS toolset, could help us navigate the storm a bit better. It already helps me find direction.
 
 So yes, AI is the storm.
 
