@@ -50,7 +50,7 @@ As Addy Osmani describes in Comprehension Debt - the hidden cost of AI generated
 > The right question for now isn’t “how do we generate more code?” It’s “how do we actually understand more of what we’re shipping?” so we can make sure our users get a consistently high quality experience.
 
 So how do we deal with that in OSS? 
-Adding more gates, processes to our issue life cycle, or more automation may help with quality, but it also comes with trade offs. 
+More gates, changes to issue processes, or more automation may help with quality, but they also come with trade offs.
 Imagine being a first time contributor and your main interaction is with AI and automation. That is not a very welcoming experience to come aboard. 
 This is not only about protecting quality. It is also about helping people join, learn, and grow.
 
@@ -93,7 +93,7 @@ Responsibility for the maintainers.
 
 Responsibility for the future health of OSS.
 
-Responsibility for not looking away from the harder parts of AI either.
+Responsibility for not looking away from the harder parts of AI either, including ethics, environment, copyright and other concerns.
 
 We may not have the full answer yet. I definitely do not.
 But I do know what direction I want to keep moving in.
@@ -102,7 +102,7 @@ Maybe that is also why the name Surge feels right to me. A surge is a force that
 
 So I keep talking. I keep learning. I keep using AI. I keep improving the tools. I keep supporting maintainers. I keep taking responsibility.
 
-And I keep moving forward, and I hope we can do that together.
+And I keep moving forward. I hope we can do that together.
 
 Eventually, we will find land.
 
