@@ -12,69 +12,70 @@ tags: ["ai", "drupal", "open-source", "maintainability", "community", "responsib
 featured: true
 ---
 
-_A response to [Dries](https://www.youtube.com/watch?v=EU6n7D91m_M) and the question of whether we are in or out_
+_A response to [the Driesnote](https://www.youtube.com/watch?v=EU6n7D91m_M) and the question of whether we are in or out_
 
-When Dries talks about AI, he frames it as the storm, but also as the way through the storm. That feels true. AI is not something small on the side anymore. It is changing how we build, how we write, how we review, and how we work together. Drupal is right in the middle of it. If AI is the storm, then Drupal is the ship we are trying to keep afloat, and maintainers are often the people at the helm.
+When Dries talked about AI, he framed it as the storm, but also as the way through the storm. That feels true. AI is not something small on the side anymore. It is changing how we build, how we write, how we review, and how we work together. Drupal is right in the middle of it. 
+If AI is the storm, then Drupal is the ship we are trying to keep afloat, and maintainers are often the people at the helm.
 
-So if the question is whether I am in or out, the answer is that I am already in.
-
-But being in is not the hard part.
+So if the question is whether I am in or out, the answer is that I am already in. But it's hard to navigate.
 
 ## What we owe each other in the storm
 
-The hard part is asking what responsibility we have while we are in this storm.
-
 For me, one thing still stays the same. No matter how code is written, the submitter and reviewer are still accountable for what we ship. That is the same spirit as “never submit code you do not understand”[^4]. That does not really change. AI does not remove responsibility. If anything, it makes that responsibility heavier, because the amount of code, content, and changes that can now be produced is growing much faster than our ability to fully understand and review it.
 
-At the same time, our responsibility is not only about the code that lands in a merge request. We also have responsibility toward the wider community. AI brings real concerns around environment, ethics, copyright, and more. Those discussions matter, and we should not pretend they are side issues. They are part of the responsibility too. Drupal does not just need to move forward. It needs to move forward in a way that still reflects the values of open source.
+At the same time, our responsibility is not only about the code that lands in a merge request. We also have responsibility toward the wider community. AI brings real concerns around environment, ethics, copyright, and more. Those discussions matter, they are part of the responsibility too. Drupal does not just need to move forward. It needs to move forward in a way that still reflects the values of open source.
+
+So the question I keep coming back to is: what responsibility do we have while we are in this storm?
 
 ## Process, scale, and welcome
 
 If we look at the process side, AI is really stress testing how we work at a large scale. Inside companies we can adjust our SDLC with processes, guidelines, knowledge, and tools. We can decide how far we want to go, where to put checks, how to review, and what quality bar we expect.
 
-In open source, that is harder.
+Inside Open Social, I can help steer some of this more directly. In open source, that is harder.
 
-Adding more gates or more automation may help with quality, but it also comes with trade offs. Imagine being a first contributor, not even using AI, and your main interaction is with AI automation, extra checks, or process friction. That is not a very welcoming experience to come aboard. It also makes mentoring harder. And for a project like Drupal, that matters. Open source is not only about protecting quality. It is also about helping people join, learn, and grow.
-
-So there is a real question here. Is that where Drupal as a community wants to go, or perhaps needs to go?
+Adding more gates or more automation may help with quality, but it also comes with trade offs. Imagine being a first time contributor, not even using AI, and your main interaction is with AI and automation, extra checks, or process friction. That is not a very welcoming experience to come aboard. Open source is not only about protecting quality. It is also about helping people join, learn, and grow.
 
 ## Maintainability and maintainers
 
 There is also another angle that I think matters even more over time, and that is maintainability and thus the responsibility of maintainers.
 
-We do not just need contributors. We need maintainers.
-
 In open source, maintainers are often the people at the helm. They help steer the project, keep the ship stable, and make sure new contributions do not punch holes in the hull.
 
-That responsibility matters even more with AI. AI helps us produce more code, but understanding does not grow at the same speed. It becomes easy to review something that looks fine in the moment, but that nobody can really explain later.
+That responsibility matters even more with AI. AI helps us produce more code, but understanding does not grow at the same speed.
 
-AI is adding something new that is being called comprehension debt[^2], or “cognitive and intent debt”[^3].
+AI is adding something new that is being called comprehension debt[^2], or cognitive and intent debt[^3]. 
 
-And when that happens, it is usually maintainers who have to carry most of that burden. They are the ones trying to keep the ship moving without letting it take on too much water.
+And when that happens in open source, it is usually maintainers who have to carry most of that burden.
 
-That means we do not only have a responsibility to ship things. We also have a responsibility to the people who help us do so.
+As Addy Osmani describes in Comprehension Debt - the hidden cost of AI generated code[^2]
+
+> The right question for now isn’t “how do we generate more code?” It’s “how do we actually understand more of what we’re shipping?” so we can make sure our users get a consistently high quality experience.
+> That reframe has practical consequences. It means being ruthlessly explicit about what a change is supposed to do before it’s written. It means treating verification not as an afterthought but as a structural constraint. It means maintaining the system-level mental model that lets you catch AI mistakes at architectural scale rather than line-by-line. And it means being honest about the difference between “the tests passed” and “I understand what this does and why.”
+
+So how do we deal with that in OSS? Better quality gates? Changes to issue processes? Better tooling? Or a mix of all three and more.
+
+It at least means we do not only have a responsibility to ship and contribute things. We also have a responsibility to help the people who help us do so.
 
 ## Purgatory, then adaptation
 
-I personally think we are in a bit of a purgatory phase. AI is moving faster than our tools and processes. Git, GitLab, and GitHub were built for a world where humans wrote most of the code. That world is changing. Even GitHub is now discussing how to respond to rising volumes of low quality, abandoned, and often AI generated contributions, and is exploring more controls, triage tools, and transparency for AI assisted contributions[^1].
+I personally think we are in a bit of a purgatory. AI is moving faster than our tools and processes. Git, GitLab, and GitHub were built for a world where humans wrote most of the code. That world is changing. GitHub for example is now discussing how to respond to rising volumes of low quality, abandoned, and often AI generated contributions, and is exploring more controls, triage tools, and transparency for AI assisted contributions[^1].
 
 And it should change. We should change too.
 
-But it is also hard when the tools to deal with this are not good enough yet.
+But it is also hard when the tools to deal with this are not there yet.
 
-## Keep talking, keep swimming
+## Keep talking, keep moving forward
 
-For me, the way forward is not one big answer. It is a mix of things.
+For me, the way forward is not one answer. It is a mix of things.
 
 - We should keep having these discussions.
 - We should help people who use AI deliver better quality. That is one of the reasons I am working on an AI coding starter kit for Drupal, Surge[^5].
-- And we should improve our tools and processes so we get more transparency and trust.
+- And we should improve our tools and processes so we get more transparency and trust to help deal with this storm.
 
 That last part is especially interesting to me. If we get better ways to understand how code was created, what decisions were made, and what context was used, that could really help maintainers. It will not solve everything, but it might give OSS a better way to deal with the reality we are already in.
 
-I have been playing with that kind of transparency in a small proof of concept; I wrote it up in [git bla(i)me: intent-aware blame for AI-generated code](/blog/git-blame-intent-aware-agents/). Tooling like this, once added to our OSS toolset, can help us navigate the storm even better.
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DF7AwQ-9ZSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+I have been playing with that kind of transparency in a small proof of concept; I wrote it up in [git bla(i)me: intent-aware blame for AI-generated code](/blog/git-blame-intent-aware-agents/). 
+Tooling like this, once added to our OSS toolset, can help us navigate the storm even better, it sure helps me get direction.
 
 So yes, AI is the storm.
 
@@ -89,15 +90,16 @@ Responsibility for what we approve.
 Responsibility for the community.
 Responsibility for the maintainers.
 Responsibility for the future health of OSS.
+Responsibility for not looking away from the harder parts of AI either.
 
 We may not have the full answer yet. I definitely do not.
 But I do know what direction I want to keep moving in.
 
 Maybe that is also why the name Surge feels right to me. A surge is a force that pushes forward. That is what I hope we can be in this storm, together.
 
-So I keep talking. I keep learning. I keep improving the tools. I keep supporting maintainers. I keep taking responsibility.
+So I keep talking. I keep learning. I keep using AI. I keep improving the tools. I keep supporting maintainers. I keep taking responsibility.
 
-And I keep on navigating this AI storm, and I hope we can do that together.
+And I keep moving forward, and I hope we can do that together.
 
 Eventually, we will find land.
 
