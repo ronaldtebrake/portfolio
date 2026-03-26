@@ -106,6 +106,9 @@ And I keep moving forward. I hope we can do that together.
 
 Eventually, we will find land.
 
+[EDIT]
+Since publishing this post, Drupal gained a new shared home for this work: AI Best Practices for Drupal[^6]. The project aims to become a canonical place for opinionated Drupal best practice guidance for AI agents across core and contrib. That fits the spirit of this post much better than treating this as a solo effort, so I am putting energy there too and helping contribute guidance to that shared effort.
+
 ### References
 
 [^1]: [Managing AI-generated contributions (GitHub community discussion)](https://github.com/orgs/community/discussions/185387)
@@ -117,3 +120,5 @@ Eventually, we will find land.
 [^4]: [Never submit code you do not understand — Dries Buytaert](https://dri.es/never-submit-code-you-do-not-understand)
 
 [^5]: [Surge - An AI coding starter kit for Drupal development](https://www.drupal.org/project/surge)
+
+[^6]: [AI Best Practices for Drupal](https://www.drupal.org/project/ai_best_practices)
