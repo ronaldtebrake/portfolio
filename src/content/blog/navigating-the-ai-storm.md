@@ -106,7 +106,7 @@ And I keep moving forward. I hope we can do that together.
 
 Eventually, we will find land.
 
-[EDIT]
+**[EDIT]**
 Since publishing this post, a new Drupal project was created at DrupalCon Chicago: AI Best Practices for Drupal[^6]. The goal is to provide a canonical place for opinionated Drupal best practice guidance for AI agents across core and contrib. In that spirit of doing this together, I am rallying behind that shared effort and contributing best practice guidance there as well.
 
 ### References
