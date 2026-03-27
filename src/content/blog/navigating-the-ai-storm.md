@@ -49,7 +49,16 @@ As Addy Osmani describes in Comprehension Debt - the hidden cost of AI generated
 
 > The right question for now isn’t “how do we generate more code?” It’s “how do we actually understand more of what we’re shipping?” so we can make sure our users get a consistently high quality experience.
 
-So how do we deal with that in OSS? 
+In OSS these risks are amplified:
+
+- maintainers are often volunteers
+- context is already fragmented
+- ownership is shared
+
+So somebody has to carry that burden. In most cases, it is the maintainers.
+
+That means we also have a responsibility to help them do their job, not just to increase throughput.
+
 More gates, changes to issue processes, or more automation may help with quality, but they also come with trade offs.
 Imagine being a first time contributor and your main interaction is with AI and automation. That is not a very welcoming experience to come aboard. 
 This is not only about protecting quality. It is also about helping people join, learn, and grow.
@@ -70,10 +79,14 @@ For me, the way forward is not one answer. It is a mix of things.
 - We should help people who use AI deliver better quality. That is one of the reasons I am working on an AI coding starter kit for Drupal, Surge[^5].
 - And we should improve our tools and processes so we get more transparency and trust to help deal with this storm.
 
-That last part is especially interesting to me. If we get better ways to understand how code was created, what decisions were made, and what context was used, that could really help maintainers. It will not solve everything, but it might give OSS a better way to deal with the reality we are already in.
+That last part is especially interesting to me. If we get better ways to understand how code was created, what decisions were made, and what context was used, that could really help maintainers. 
+Things like agent traces, or tools exploring intent and decision history, could give us more insight into how code came to be.
+It will not solve everything. But it could help OSS deal with the reality we are already in.
 
 I have been playing with that kind of transparency in a small proof of concept; I wrote it up in [git bla(i)me: intent-aware blame for AI-generated code](/blog/git-blame-intent-aware-agents/). 
 Tooling like this, once added to our OSS toolset, could help us navigate the storm a bit better. It already helps me find direction.
+
+## Responsibility
 
 So yes, AI is the storm.
 
