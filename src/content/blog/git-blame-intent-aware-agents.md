@@ -1,6 +1,6 @@
 ---
 title: "git bla(i)me: intent-aware blame for AI-generated code"
-description: "If agents write more of our code, engineering shifts toward intent, verification, and accountability—we need the SDLC to preserve context, evidence, and trails so changes stay reviewable and maintainable."
+description: "Agent-generated code makes diffs cheap. It makes explanations expensive. If agents write most of our code, we need to redefine the SDLC around the artifacts that matter: not just the diff, but the context and reasoning that produced it, and the evidence that it worked."
 pubDate: "Feb 14 2026"
 heroImage: "./assets/agent-trace-update.png"
 category: "process"
@@ -8,66 +8,50 @@ tags: ["git", "ai", "agent-trace", "workflow", "code-review"]
 featured: false
 ---
 
-If agents end up writing most of our code, the role of engineers will shift, where our roles have never been “just” about writing code. We define intent and constraints, orchestrate agent work, verify results, and stay accountable for the outcomes.
+If agents end up writing most of our code, the role of engineers will shift, where our roles have never been "just" about writing code. We define intent and constraints, orchestrate agent work, verify results, and stay accountable for the outcomes.
 
-That does not change with AI.
+But AI can already generate code at scale. That means we need to redefine the SDLC around the artifacts that matter in an agentic workflow. Not just the code itself, but the context and reasoning that produced it, and the evidence showing it delivered the right outcomes. So we can stay accountable.
 
-What does change is the amount of code and change we can now produce, and how easy it becomes to lose the context behind it.
+My working take is that agent conversations should be treated like build artifacts: linked to commits with stable identifiers, and paired with verification evidence so changes remain reviewable and auditable.
 
-That is why I think we need to rethink part of the SDLC for agent workflows. Not only around the diff itself, but around the artifacts that explain the diff: intent, context, reasoning, and evidence that the result actually worked.
-
-- That matters for review.  
-- It matters for audits.  
-- It matters for incident response.  
-- And it matters a lot for maintainers.
-
-Because maintainers are often the people who end up carrying code they did not write, decisions they did not make, and context that was never captured nor communicated.
+One of the real challenges is whether we can turn intent into verifiable, reconstructable value that holds up in review, audits, incident response, and governance.
 
 So the question becomes:
 
-If agents write more of our code, how do we make sure the value is still reviewable, reconstructable, and maintainable later?
+If AI agents write our code, how can we make sure we're actually delivering that value, and that we can prove it later?
 
-For me, that means getting more disciplined about three things:
+In practice, that means getting disciplined about:
 
-- the context we give the agent
-- the evidence we use to verify the outcome
-- the trail we preserve so somebody else can understand it later
+- providing the right context (intent, constraints, risk)
+- verifying the outcome (tests, checks, benchmarks, approvals)
+- preserving the evidence trail so we can reconstruct it later (review, incident, audit)
+
+Today I'd like to dive into that question.
 
 ## Context is the missing artifact
 
-When you look at a line in Git blame, you usually do not want a person. You want the reason behind the line.
+When you look at a line in Git blame, you usually want the reason behind it, not a person.
 
-That reason usually exists, but it is scattered.
+That context exists, but it's spread out:
 
-A bit of it is in tickets.  
-A bit of it is in PR comments.  
-A bit of it is in chat.  
-A bit of it is in your IDE.  
-A bit of it is in the agent conversation itself.
+- Jira tickets, specs, PR comments
+- chat and meeting notes
+- IDE or vendor agent transcripts
+- etc.
 
-That is part of why I find the idea of a context graph[^1] interesting. The core idea is simple: decisions leave traces, and those traces should be searchable later, not lost across tools and people's heads. The same idea shows up in software agent workflows too[^2]. If we keep throwing away context, we make future understanding more expensive.
+Foundation Capital calls this idea a ["context graph"](https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/): decision traces over time that make decision history searchable. Cognition makes a similar point for software: [we're context constrained, and throwing context away is costly](https://cognition.ai/blog/agent-trace).
 
-The ecosystem is already moving in this direction. Entire[^3], for example, treats agent sessions as part of the commit story, not as something disposable around it.
-
-That feels right to me.
+The ecosystem is already moving this way. Tools like [Entire](https://entire.io/) treat agent sessions as first-class development artifacts, capturing and indexing them alongside commits so context and reasoning become searchable. Their approach, "every commit tells a story", recognizes that the story matters as much as the code.
 
 ## Agent Trace in one paragraph
 
-Agent Trace[^4] is an open specification for recording attribution data for AI generated code. It is not a product and it does not define where traces need to live. It focuses on attribution, with goals like interoperability, file and line level granularity, extensibility, and human readability. It is not trying to answer legal ownership, training data provenance, or code quality by itself.
+Agent Trace is an [open spec](https://agent-trace.dev/) that links code changes (down to file and line ranges) to the conversation that produced them. It is storage-agnostic and has extensible metadata.
 
-That makes it useful as a building block.
+The spec's goals: interoperability (any compliant tool can read/write attribution), granularity (file and line-level attribution), extensibility (custom metadata without breaking compatibility), and human & agent readability (no special tooling required). It explicitly does not track code ownership, training data provenance, or quality assessment—it's purely about attribution. 
 
-Not the full answer, but a way to connect code back to the conversation and tool context that produced it.
+## My POC: one trace per commit, stored as git notes
 
-## My proof of concept
-
-My working take is simple:
-
-Agent conversations should be treated more like build artifacts.
-
-They should be linked to commits with stable identifiers, and paired with verification evidence, so changes remain reviewable and reconstructable later.
-
-In my proof of concept, I store one trace record per commit using git notes. That keeps the normal history clean, while still attaching trace data to the revision.
+I store a trace record as git notes (example: refs/notes/agent-trace). That keeps normal history clean but still attaches trace data to a revision.
 
 A simplified example:
 
@@ -89,134 +73,83 @@ A simplified example:
 }
 ```
 
-Here is a demo of the proof of concept in action[^5]:
+Here's a demo of the POC in action:
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/DF7AwQ-9ZSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-What I like about this approach is that it gives me a stable way to move from a commit, or even a line, back to the context that created it.
+You can see how I'm able to trace the entire conversation I had in my IDE. The steps the agent took, the tool calls it performed and the outcome.
+We can even see what model was used for what line. Giving me all the context I need.
 
-Not only the final code, but the conversation, the steps the agent took, the tools it used, and the model behind the output.
+## Why it matters: autonomy needs an evidence layer
 
-That gives me something Git blame cannot give me on its own.
+Git blame isn't going away. Most people use it to find issue → PR → commit → when/who and the context for that specific line, and that stays true with agents.
 
-## Why this matters for maintainers
+What can change is what that commit points you to.
 
-For me, this is where things get really practical.
+If agents write most of the code, commits and PRs become decision boundaries:
 
-Maintainers often step into code long after it was written. Sometimes they are reviewing it for the first time. Sometimes they are debugging it months later. Sometimes they are trying to understand whether a risky change was intentional, verified, or just accepted because the diff looked plausible.
+- a place to gate risk
+- a place to attach evidence
+- a stable anchor for rollback and incident response
 
-That is where traces could help.
+With per-commit traces, you get a simple but powerful workflow:
 
-Not because maintainers want to read every prompt.
+From a commit (or even a line range), you can jump to the context that produced it.
 
-But because maintainers need a faster path to the answer behind a line:
+But the real goal is bigger than "prompt tracking". It is the relationship between:
 
-- what was this trying to do  
-- what constraints mattered  
-- what else was considered  
-- what verification was done  
-- what should I trust here, and what should I check again
+- intent (ticket/spec/ADR)
+- code (the diff)
+- verification (tests, checks, approvals, benchmarks)
+- outcomes (deploy/incident signals, later)
 
-That changes the value of blame.
+That could enable some practical upgrades.
 
-Git blame today is often a path to who and when.  
-Intent aware blame could make it a path to why.
+### 1) Review becomes "intent inspection + verification"
 
-And for maintainers, that can mean less archaeology.
+Instead of guessing intent from diffs, reviewers can jump to the reasoning behind the risky parts and then verify it with independent evidence (tests, checks, benchmarks).
 
-It can make inherited code easier to review.  
-It can make incidents easier to reconstruct.  
-It can make risky changes easier to challenge.  
-And it can make it easier to mentor contributors, because the reasoning is no longer trapped in one person's IDE session.
+Good rule of thumb: the trace explains intent. Verification proves it.
 
-If we care about maintainability, that matters.
+### 2) CI becomes intent-aware (add, don't replace)
 
-## Autonomy needs an evidence layer
+We currently see a lot of usage of CODEOWNERS, which is path-based, but risk isn't.
 
-Git blame is not going away.
+With traces plus basic risk scoring, review can be routed by "what is this trying to do?" not only "which folder changed?"
 
-People still use it to move from a line to a commit, from a commit to a PR, and from a PR to the surrounding context. That still makes sense in an agent workflow too.
+Think: owners for auth flows, data migrations, API contracts, security hardening.
 
-What changes is what that commit can point to.
+This pairs well with "agentic codeowners" ideas: low-risk PRs move faster, high-risk PRs get the right humans, and break-glass actions are explicit.
 
-If agents write more of the code, then commits and PRs become decision boundaries.
+Trace metadata can help you add targeted tests when intent suggests risk (auth, permissions, migrations, API changes).
 
-- A place to gate risk.  
-- A place to attach evidence.  
-- A place to preserve context.  
-- A stable anchor for rollback, audit, and incident response.
+### 3) Observability gets closer to the SDLC
 
-That is why I think traces matter most when they are paired with verification.
+There's a proposal to [represent Agent Trace in OpenTelemetry](https://github.com/cursor/agent-trace/issues/6), treating code attribution as telemetry you can correlate with builds, deploys, incidents, and rollbacks.
 
-The trace explains intent.  
-Verification proves the outcome.
+This is interesting because it turns traces into something you can query like other operational data:
+"which agent runs produced code that later regressed performance?" or "what changed before this incident?"
 
-That relationship matters more than prompt history by itself.
+## I hope this becomes a standard
 
-## What this could unlock
+We don't need another tool to do this
 
-I think there are at least three practical upgrades here.
+- agents emit traces in a common format
+- teams store them however they want (notes, sidecars, a store)
+- GitHub and GitLab surface "explain this change" where we already work 
 
-### 1. Better review
+That's how everyone benefits, without extra vendor-specific CLIs.
 
-Review becomes less about guessing intent from a diff and more about checking the reasoning behind a change against actual evidence.
+## What I'm curious about
 
-If a change touches permissions, migrations, or API contracts, I want to know what the agent was asked to do, what constraints it was given, and what was done to verify the result.
+Right now, traces feel like documentation and auditable insights—useful for understanding "why" after the fact. But will they ever be more than that?
 
-That does not replace review. It gives review more context.
+I'm curious about your experience: have you tried capturing agent context alongside commits? What are you seeing in practice? And do you think traces can become actionable inputs for automation—routing, approvals, gates—or will they always be retrospective documentation?
 
-### 2. Better support for maintainers
+## References
 
-This is the part I care about most.
-
-A maintainer should not have to reverse engineer every change from scratch.
-
-If traces are attached cleanly to commits, a maintainer can move from a line to the decision context behind it. That makes it easier to understand inherited code, review risky changes, debug regressions, and decide what deserves more scrutiny.
-
-It can also reduce one of the worst costs of AI generated code: plausible changes with weak understanding behind them.
-
-### 3. Better routing and automation
-
-Today, a lot of automation is still path based. But risk is not always path based.
-
-With traces and some lightweight risk scoring, review could be routed more by intent: auth flows, migrations, data access, API behavior, security changes.
-
-That means low risk work can move faster, while higher risk work reaches the right humans sooner.
-
-## Why I hope this becomes a standard
-
-I do not think we need one more closed tool for this.
-
-What I hope for is a shared pattern:
-
-- agents emit traces in a common format  
-- teams store them however they want  
-- platforms like GitHub and GitLab expose that context where people already review code
-- OpenTelemetry in mind, for observability in more than just the above tooling[^6]
-
-That way, the benefit is not locked into one vendor workflow.
-
-And for maintainers, that matters too. The whole point is to reduce hidden context, not move it into one more silo.
-
-## What I am curious about
-
-Right now, traces feel like documentation with operational value.
-
-That is already useful.
-
-But I am curious whether they can become more than that.
-
-Can they become actionable inputs for routing, approvals, CI, and incident response?  
-Can they help maintainers make better decisions faster?  
-Can they become part of how we keep AI generated code understandable over time?
-
-I think they can.
-
-And I think maintainers are one of the clearest reasons why.
-
-[^1]: https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/
-[^2]: https://cognition.ai/blog/agent-trace
-[^3]: https://entire.io/
-[^4]: https://agent-trace.dev/
-[^5]: https://www.youtube.com/watch?v=DF7AwQ-9ZSY
-[^6]: https://github.com/cursor/agent-trace/issues/6
+- [Context graphs (Foundation Capital)](https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/)
+- [Agent Trace blog (Cognition)](https://cognition.ai/blog/agent-trace)
+- [Agent Trace specification](https://agent-trace.dev/)
+- [Entire](https://entire.io/)
+- [Agent Trace with Open Telemetry](https://github.com/cursor/agent-trace/issues/6)
