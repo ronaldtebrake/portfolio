@@ -2,7 +2,7 @@
 title: "Beyond the Diff: What Maintainers Need from an Agentic Workflow"
 description: "Review is moving closer to intent. That shift is worth testing through the lens of maintainers, trust, transparency, and the SDLC. Right where it happens, in GitLab."
 pubDate: "Mar 28 2026"
-heroImage: "./assets/beyond-the-diff.webp"
+heroImage: "./assets/hero.png"
 heroImageAlt: "GitLab merge request view surfacing agent intent and line-level attribution"
 category: "process"
 tags: ["git", "ai", "agentic-workflow", "maintainers", "code-review", "transparency", "gitlab", "drupal"]
