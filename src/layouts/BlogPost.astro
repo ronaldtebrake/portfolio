@@ -1,32 +1,82 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
+
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, heroImage, heroImageAlt, heroImageCredit } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	category,
+	heroImage,
+	heroImageAlt,
+	heroImageCredit,
+} = Astro.props;
+
+const categoryLabels: Record<(typeof category), string> = {
+	product: 'Product',
+	people: 'People',
+	process: 'Process',
+};
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+	weekday: 'short',
+	month: 'short',
+	day: 'numeric',
+	year: 'numeric',
+});
+
+const categoryLabel = categoryLabels[category];
 ---
 
 <BaseLayout title={title} description={description}>
-    <div class="px-6 py-32 lg:px-8">
-        <div class="mx-auto max-w-3xl text-base leading-7">
-            <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue prose lg:prose-xl dark:text-primary-200 text-coolGray-600">
-                <h1 class="dark:text-primary-200 text-primary-950">{title}</h1>
-                {heroImage && (
-                    <figure class="not-prose m-0">
-                        <Image src={heroImage} class="transform w-full" alt={heroImageAlt ?? ''} />
-                        {heroImageCredit && (
-                            <figcaption class="mt-2 text-sm text-coolGray-500 dark:text-primary-300">
-                                Photo by{' '}
-                                <a href={heroImageCredit.url} rel="noopener noreferrer" target="_blank">
-                                    {heroImageCredit.photoBy}
-                                </a>
-                                .
-                            </figcaption>
-                        )}
-                    </figure>
-                )}
-                <slot />
-            </article>
-        </div>
-    </div>
+	<div class="px-6 py-32 lg:px-8">
+		<div class="mx-auto max-w-3xl text-base leading-7">
+			<header class="not-prose mx-auto mb-10 w-full max-w-2xl text-center">
+				<h1 class="text-3xl font-bold tracking-tight text-primary-950 dark:text-primary-200 sm:text-4xl">
+					{title}
+				</h1>
+				<p
+					class="mx-auto mt-4 max-w-2xl text-lg italic text-coolGray-600 dark:text-coolGray-400"
+				>
+					{description}
+				</p>
+			</header>
+
+			{heroImage ? (
+				<figure class="not-prose mx-auto mb-12 w-full max-w-2xl">
+					<Image
+						src={heroImage}
+						class="w-full rounded-2xl object-cover sm:rounded-3xl"
+						alt={heroImageAlt ?? ''}
+					/>
+					<figcaption class="mt-4 flex flex-col gap-2 text-sm text-coolGray-500 dark:text-coolGray-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+						<span class="text-left">{formattedDate}</span>
+						<span class="text-left sm:text-right">{categoryLabel}</span>
+					</figcaption>
+					{heroImageCredit && (
+						<p class="mt-3 text-sm text-coolGray-500 dark:text-primary-300">
+							Photo by{' '}
+							<a href={heroImageCredit.url} rel="noopener noreferrer" target="_blank" class="underline">
+								{heroImageCredit.photoBy}
+							</a>
+							.
+						</p>
+					)}
+				</figure>
+			) : (
+				<div class="not-prose mx-auto mb-12 flex max-w-2xl flex-col gap-2 text-sm text-coolGray-500 dark:text-coolGray-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+					<span class="text-left">{formattedDate}</span>
+					<span class="text-left sm:text-right">{categoryLabel}</span>
+				</div>
+			)}
+
+			<article
+				class="format format-sm sm:format-base lg:format-lg format-blue prose lg:prose-xl dark:text-primary-200 mx-auto w-full max-w-2xl text-coolGray-600 prose-headings:scroll-mt-24"
+			>
+				<slot />
+			</article>
+		</div>
+	</div>
 </BaseLayout>
