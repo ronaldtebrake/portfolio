@@ -32,13 +32,13 @@ Those explorations were valuable. They helped me better understand both the prob
 
 Over time, I started to feel that I was solving the right problem in the wrong place.
 
-The conversations during DrupalCon Chicago, in Slack, helped me sharpen something that was already present in Surge from the start. Thanks, webchick.[^4]
+While DrupalCon Chicago was underway, the buzz around it and the conversations in Slack helped me sharpen something that had already been present in Surge from the start. A few exchanges with webchick[^4] especially helped clarify it.
 
 Surge was always meant to help move Drupal’s AI developer experience forward. But the more I pushed on it, the clearer it became that it was still another parallel effort.
 
-That is what made *AI Best Practices for Drupal* click for me.[^5]
+That, and the energy, is what made *AI Best Practices for Drupal* click for me.[^5]
 
-Not because it changed the problem.  
+Not because it changed the problem. 
 Because it is the better place to solve it.
 
 ## Why I’m sunsetting Surge
@@ -79,11 +79,19 @@ It is to help create a shared starting point that is simple, opinionated, and pr
 
 People should not have to make a dozen early choices about models, coding agents, harnesses, skills, DDEV, Drush, or Composer before they even know which parts matter for their use case.
 
-The role of this project, as I see it, is to bring together the pieces that make that possible: **`AGENTS.md`**, **MCP and Tool API integrations**, **Skills**, **developer tooling**, and strong references to canonical Drupal docs and workflows. Maybe even a CLI, if that turns out to be part of the right experience.
+The role of this project, as I see it, is to bring together the pieces that make that possible: AGENTS.md, MCP and Tool API integrations, Skills, documentation, guidelines, and workflows. Maybe even a CLI[^6], if that turns out to be part of the right experience.
 
 If we get that balance right, we get both: a fast, approachable path for most people and a flexible foundation for teams and individuals who want more control.
 
-That is the direction[^6] I want to help build now.
+That is the direction[^7] I want to help build now, and I am encouraged by how many pieces are already taking shape.
+
+People are already contributing skills, documentation, feedback, evals, and more to the project. 
+
+There is a meta for [a CLI in the Core Community Initiative](https://www.drupal.org/project/drupal/issues/3582246), if that proves to be part of the right path. 
+
+Acquia has also stepped up to sponsor upcoming development work on [drupal/mcp_server](https://www.drupal.org/project/mcp_server), which could help expose Drupal capabilities to AI systems more directly.
+
+There is still a lot to figure out, but that is exactly why this feels like the right place to contribute and learn from everybody else.
 
 ## What this means for me
 
@@ -105,4 +113,5 @@ If you are thinking about the same questions, I would love for you to join the d
 [^3]: [Version-Aware Drupal Docs for AI](/blog/building-local-drupal-api-mcp-server/)
 [^4]: [webchick](http://webchick.net/)
 [^5]: [AI Best Practices for Drupal](https://www.drupal.org/project/ai_best_practices)
-[^6]: [Determine project "boundaries" - Comment #3 by webchick on the project vision](https://www.drupal.org/project/ai_best_practices/issues/3584914#comment-16551458)
+[^6]: [A command line tool for interfacing with Drupal.org](https://github.com/mglaman/drupalorg-cli)
+[^7]: [Determine project "boundaries" - Comment #3 by webchick on the project vision](https://www.drupal.org/project/ai_best_practices/issues/3584914#comment-16551458)
