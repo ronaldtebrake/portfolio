@@ -31,9 +31,9 @@ import FeaturedPost from '@/components/FeaturedPost.astro';
 
 // Use the v2 getCollection to fetch all blog posts, and then sort them by date.
 import { getCollection } from 'astro:content';
-const featuredBlogEntry = await getCollection('blog', ({ data }) => {
-  return data.featured === true;
-});
+const featuredPost = (await getCollection('blog', ({ data }) => data.featured === true)).sort(
+  (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+)[0];
 
 ---
 
@@ -110,9 +110,9 @@ const featuredBlogEntry = await getCollection('blog', ({ data }) => {
   >
     <div class="grid grid-cols-1 gap-16 pt-6 sm:pb-6 lg:pb-24 lg:grid-cols-2 lg:pt-12" id="links">
       {
-        featuredBlogEntry.map((post, index) => index < 1 && (
-          <FeaturedPost url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} description={post.data.description} category={post.data.category} heroImage={post.data.heroImage} />
-        ))
+        featuredPost && (
+          <FeaturedPost url={`/blog/${featuredPost.slug}/`} title={featuredPost.data.title} pubDate={featuredPost.data.pubDate} description={featuredPost.data.description} category={featuredPost.data.category} heroImage={featuredPost.data.heroImage} />
+        )
       }  
 
       <!-- Navigation -->
