@@ -1,16 +1,16 @@
 ---
-title: "Technical Debt is not just the pile. It is a Signal."
+title: "Technical Debt is not just the puddle. It is a Signal."
 description: "AI can make technical debt cheaper to clean up, but that does not mean we are treating it well."
 pubDate: "Apr 25 2026"
-heroImage: "./assets/pexels-sami-turk-30335242.jpg"
-heroImageAlt: "Industrial warning signs on an electrical panel representing technical debt as a signal"
+heroImage: "./assets/pexels-pranjall-kumar-8719044.jpg"
+heroImageAlt: "Tap with dropping water, a visual metaphor for technical debt when the tap is open and the puddle keeps coming back"
 heroImageCredit:
-  photoBy: "Photo by Sami TÜRK from Pexels"
-  url: "https://www.pexels.com/photo/industrial-warning-signs-on-electrical-panel-30335242"
+  photoBy: "Photo by Pranjall Kumar from Pexels"
+  url: "https://www.pexels.com/photo/tap-with-dropping-water-8719044/"
 category: "process"
 tags: ["technical-debt", "ai", "software-engineering", "code-quality", "maintainability", "comprehension-debt", "intent-debt"]
 featured: true
----------------
+---
 
 There is a tempting story going around right now: AI changes technical debt forever.
 Cleanup is cheaper. Refactoring is faster. Old migrations look possible again. The backlog item that used to sit around for months can sometimes be fixed in minutes.
@@ -31,7 +31,7 @@ But if the same puddle keeps appearing, mopping faster is not enough. At some po
 In Dutch, we would say you are mopping with the tap open.
 Technical debt works the same way. The items in the backlog are the puddle. The signal is the leak.
 
-## The pile is not the whole story
+## The puddle is not the whole story
 
 One reason the conversation gets messy is that we use "technical debt" as one big bucket.
 Bad code. Missing tests. Outdated documentation. Fragile infrastructure. Unclear ownership. Old patterns nobody wants to copy, but everybody still does.
@@ -51,7 +51,7 @@ Was it a deliberate trade-off? Was it pressure? Missing context? A bad default? 
 That second question is where the useful signal is.
 A code smell tells us something about code. A missing test tells us something about verification. Outdated documentation tells us something about how knowledge is maintained. A decision nobody can explain anymore tells us something about intent.
 This is why I like thinking about technical debt as telemetry.
-A backlog says: here is a pile of things to do later.
+A backlog says: here is a puddle of things to do later.
 Telemetry says: here is feedback about the health of the system right now.
 If we only remove the artifact, we might remove the evidence.
 And with AI, we can remove evidence faster than ever.
@@ -112,9 +112,9 @@ That is not slowing down. That is protecting the speed you want to keep.
 AI changes technical debt. It changes the cost of cleanup, the speed of code production, the review burden, and the way patterns spread.
 But it does not change the core responsibility.
 We are still accountable for what we ship. We are still responsible for the systems we maintain. We are still responsible for understanding the work, or making sure the right understanding is captured and shared.
-Technical debt is not just the pile of compromises we accumulated in the codebase.
+Technical debt is not just the puddle we accumulate in the codebase.
 It is also the trail of signals showing where our system, process, knowledge, and incentives are out of alignment.
-AI can help us clean the pile faster.
+AI can help us clean up the puddle faster.
 But if we ignore the trail, we will keep producing the same debt.
 Only faster.
 Cleaner.
