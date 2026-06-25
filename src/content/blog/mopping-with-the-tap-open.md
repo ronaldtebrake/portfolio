@@ -1,6 +1,6 @@
 ---
-title: "Technical Debt is not just the puddle. It is a Signal."
-description: "AI can make technical debt cheaper to clean up, but that does not mean we are treating it well."
+title: "Mopping with the Tap Open"
+description: "When AI makes technical debt cheaper to clean up, mopping faster is not enough. The backlog is the puddle. The real work is finding the leak."
 pubDate: "Apr 25 2026"
 heroImage: "./assets/pexels-pranjall-kumar-8719044.jpg"
 heroImageAlt: "Tap with dropping water, a visual metaphor for technical debt when the tap is open and the puddle keeps coming back"
