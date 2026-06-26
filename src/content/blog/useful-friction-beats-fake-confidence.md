@@ -74,7 +74,7 @@ The pressure is subtle. Nobody is explicitly asked to abandon judgment. The loop
 
 That is cognitive surrender. Not laziness. Not incompetence. More like a small handoff of judgment at each step in the chain. A moment where the system feels confident enough that the human stops pushing back.
 
-Once or twice, that is probably fine. But repeated across a team, across releases, across many small changes, it starts to accumulate. The team ships more, but understands less. More assumptions live inside agent runs, summaries, and generated changes instead of inside shared team memory. The codebase moves, but the team's mental model falls behind and it ultimately results in cognitive debt.
+Once or twice, that is probably fine. But repeated across a team, across releases, across many small changes, it starts to accumulate. The team ships more, but understands less. More assumptions live inside agent runs, summaries, and generated changes instead of inside shared team memory. The codebase moves, but the team's mental model falls behind. That is cognitive debt.
 
 Unlike technical debt, it does not always show up as messy code. Sometimes the code is clean. The tests are passing. The architecture still looks reasonable. The debt is in the gap between what the system now does and what the team can confidently explain.
 
