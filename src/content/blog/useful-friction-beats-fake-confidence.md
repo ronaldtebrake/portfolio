@@ -44,7 +44,7 @@ Agentic software delivery is not simply the old SDLC running faster. The work do
 
 Implementation shrinks. Specification expands. Validation expands. Review carries more weight. Learning needs to become more deliberate. Less of the work lives in typing code by hand, and more of it lives in deciding what should happen, checking whether it did, understanding what changed, and knowing when the loop should stop.
 
-That matters because the old process had a lot of friction in the middle. Some of that was waste, and I do not want to romanticize slower delivery. Long handoffs are not a guarantee for quality. But some friction did useful work.
+That matters because the old process had a lot of friction in the middle. Some of that was waste, and I do not want to romanticize slower delivery. Long handoffs do not guarantee quality. But some friction did useful work.
 
 A vague ticket slowed down when an engineer hit the ambiguity. A risky design choice became visible because somebody had to integrate it. A missing edge case appeared during debugging. The work had weight, and that weight created moments where the team could notice what was unclear.
 
@@ -107,6 +107,7 @@ A small change with clear intent, strong evidence, and easy rollback can keep mo
 Those are not metrics yet. They are signals. They help the team decide what should happen next: continue the loop, gather better evidence, ask for human judgment, route the review to the right person, or turn the change into something the team needs to learn from.
 
 Without the trail, those signals become guesses. With the trail, they become inspectable.
+
 Some signals route attention back into the pull request. Others point beyond it. They show where the team needs to keep learning.
 
 ## The learning loop
@@ -119,7 +120,7 @@ That does not mean turning every change into documentation. Most changes should 
 
 Code review was never just about checking code quality. It was also about maintaining mental alignment.
 
-If loops are going to change the system faster, we need loops that help understanding keep up.
+If loops are going to change the system faster, we need loops that help human understanding keep up.
 
 ## Keep the (right) tension
 
