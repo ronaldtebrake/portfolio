@@ -1,0 +1,32 @@
+---
+import { BLOG_CATEGORIES, categoryLabels, type BlogCategory } from '@/lib/categories';
+
+interface Props {
+	activeCategory?: BlogCategory | 'all';
+}
+
+const { activeCategory = 'all' } = Astro.props;
+
+const activeClasses =
+	'inline-block py-2.5 px-5 text-lg text-white bg-black rounded-full transition duration-100';
+const inactiveClasses =
+	'inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100';
+---
+
+<ul class="flex -mb-2 flex-wrap items-center mt-8 gap-2">
+	<li>
+		<a class={activeCategory === 'all' ? activeClasses : inactiveClasses} href="/blog/">All</a>
+	</li>
+	{
+		BLOG_CATEGORIES.map((category) => (
+			<li>
+				<a
+					class={activeCategory === category ? activeClasses : inactiveClasses}
+					href={`/category/${category}/`}
+				>
+					{categoryLabels[category]}
+				</a>
+			</li>
+		))
+	}
+</ul>

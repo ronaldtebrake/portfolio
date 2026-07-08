@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
-import { BLOG_CATEGORIES, categoryLabels } from '@/lib/categories';
+import CategoryFilter from '@/components/CategoryFilter.astro';
 
 const title = 'Blog';
 const description = 'All articles.';
@@ -22,23 +22,7 @@ const posts = (await getCollection('blog')).sort(
         <div class="inline-flex w-full mx-auto items-start">
           <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">Posts</h1>
         </div>
-        <ul class="flex -mb-2 flex-wrap items-center mt-8 gap-2">
-          <li>
-            <a class="inline-block py-2.5 px-5 text-lg text-white bg-black rounded-full transition duration-100" href="/blog/">
-              All
-            </a>
-          </li>
-          {BLOG_CATEGORIES.map((category) => (
-            <li>
-              <a
-                class="inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100"
-                href={`/category/${category}/`}
-              >
-                {categoryLabels[category]}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <CategoryFilter activeCategory="all" />
       </div>
       <div>
       {

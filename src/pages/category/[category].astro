@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
+import CategoryFilter from '@/components/CategoryFilter.astro';
 import { BLOG_CATEGORIES, categoryLabels, isBlogCategory } from '@/lib/categories';
 
 export async function getStaticPaths() {
@@ -38,6 +39,7 @@ const permalink = Astro.site?.href
             {categoryLabel}
           </h1>
         </div>
+        <CategoryFilter activeCategory={category} />
       </div>
       <div>
         {filteredPosts.length > 0 ? (
