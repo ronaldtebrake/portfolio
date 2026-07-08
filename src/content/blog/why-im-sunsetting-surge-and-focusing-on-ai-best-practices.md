@@ -7,7 +7,7 @@ heroImageAlt: "Sunset horizon representing the shift from Surge to AI Best Pract
 heroImageCredit:
   photoBy: "Photo by Hernan Pauccara from Pexels"
   url: "https://www.pexels.com/photo/frozen-wave-against-sunlight-1210273/"
-category: "process"
+category: "product"
 tags: ["drupal", "ai", "ai-best-practices", "surge", "developer-experience", "workflows", "mcp", "skills"]
 featured: false
 ---

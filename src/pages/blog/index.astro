@@ -3,16 +3,16 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
+import { BLOG_CATEGORIES, categoryLabels } from '@/lib/categories';
 
 const title = 'Blog';
 const description = 'All articles.';
-const permalink = Astro.site?.href ? `${Astro.site.href}blog` : '/blog';
+const permalink = Astro.site?.href ? `${Astro.site.href}blog/` : '/blog/';
 const current = 'blog';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
-
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current={current}>
@@ -21,17 +21,24 @@ const posts = (await getCollection('blog')).sort(
       <div class="mb-16">
         <div class="inline-flex w-full mx-auto items-start">
           <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">Posts</h1>
-          <!-- add count <span class="block -mb-4 mr-12 lg:mr-8 text-right text-xl sm:text-2xl text-coolGray-600">(21)</span> -->
         </div>
-        <!-- 
-        category filter
-        <ul class="flex -mb-2 flex-wrap items-center mt-8">
-          <li class="mb-2 mr-2 md:mr-6"><a class="inline-block py-2.5 px-5 text-lg text-white bg-black rounded-full transition duration-100" href="#">All</a></li>
-          <li class="mb-2 mr-2 md:mr-6"><a class="inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100" href="#">Villa</a></li>
-          <li class="mb-2 mr-2 md:mr-6"><a class="inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100" href="#">Residance</a></li>
-          <li class="mb-2"><a class="inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100" href="#">Apartaments</a></li>
-        </ul> 
-        -->
+        <ul class="flex -mb-2 flex-wrap items-center mt-8 gap-2">
+          <li>
+            <a class="inline-block py-2.5 px-5 text-lg text-white bg-black rounded-full transition duration-100" href="/blog/">
+              All
+            </a>
+          </li>
+          {BLOG_CATEGORIES.map((category) => (
+            <li>
+              <a
+                class="inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100"
+                href={`/category/${category}/`}
+              >
+                {categoryLabels[category]}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
       {

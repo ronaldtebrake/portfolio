@@ -3,9 +3,12 @@ export interface Props {
 	title: string;
 	description: string;
 	ogImage?: string;
+	noIndex?: boolean;
+	jsonLd?: Record<string, unknown>;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noIndex = false, jsonLd } = Astro.props;
+const robotsContent = noIndex ? 'noindex, follow' : 'index, follow';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Split the String and replace the first and last slash.
@@ -55,7 +58,7 @@ if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/bl
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content="Ronald te Brake" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={robotsContent} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -75,6 +78,10 @@ if (!Astro.url.pathname.startsWith('/blog/') || Astro.url.pathname.endsWith('/bl
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
 <meta name="keywords" content="Engineering manager, Product development, People, Process, Drupal" />
+
+{jsonLd && (
+	<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}
 
 <style>
     @view-transition {

@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogPostTeaser from '@/components/BlogPostTeaser.astro';
+import { BLOG_CATEGORIES, categoryLabels, isBlogCategory } from '@/lib/categories';
+
+export async function getStaticPaths() {
+  return BLOG_CATEGORIES.map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+
+if (!isBlogCategory(category)) {
+  return Astro.redirect('/category/');
+}
+
+const allPosts = await getCollection('blog');
+const filteredPosts = allPosts
+  .filter((post) => post.data.category === category)
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+
+const categoryLabel = categoryLabels[category];
+const title = `${categoryLabel} posts`;
+const description = `All blog posts about ${categoryLabel.toLowerCase()}.`;
+const permalink = Astro.site?.href
+  ? `${Astro.site.href}category/${category}/`
+  : `/category/${category}/`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-16">
+        <div class="inline-flex w-full mx-auto items-start">
+          <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">
+            {categoryLabel}
+          </h1>
+        </div>
+      </div>
+      <div>
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post) => (
+            <BlogPostTeaser
+              url={`/blog/${post.slug}/`}
+              title={post.data.title}
+              pubDate={post.data.pubDate}
+              category={post.data.category}
+              heroImage={post.data.heroImage}
+              description={post.data.description}
+              showCategory={false}
+            />
+          ))
+        ) : (
+          <p>No posts found in this category.</p>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

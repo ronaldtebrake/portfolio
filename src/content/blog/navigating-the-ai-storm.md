@@ -7,7 +7,7 @@ heroImageAlt: "Silhouette of a small boat on water at sunset"
 heroImageCredit:
   photoBy: "Johannes Plenio"
   url: "https://www.pexels.com/photo/silhouette-photography-of-boat-on-water-during-sunset-1118874/"
-category: "process"
+category: "people"
 tags: ["ai", "drupal", "open-source", "maintainability", "community", "responsibility"]
 featured: true
 ---

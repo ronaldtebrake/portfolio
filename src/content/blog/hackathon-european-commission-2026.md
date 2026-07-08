@@ -3,7 +3,7 @@ title: "A Hackathon Full of Energy, Ideas, and Real Problems"
 description: "Reflecting on a hackathon at the European Commission where we explored how AI can better support content editors, focusing on turning review feedback into structured knowledge that improves future content by design."
 pubDate: "Feb 1 2026"
 heroImage: "./assets/ace.png"
-category: "process"
+category: "product"
 tags: ["ai", "hackathon", "content-editing", "workflow"]
 featured: false
 ---

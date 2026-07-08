@@ -39,6 +39,10 @@ interface LlmsPostConfig {
   link: string;
 }
 
+const noIndexHeaders = {
+  'X-Robots-Tag': 'noindex',
+} as const;
+
 // Document builder - normalizes newlines and returns Response
 function doc(...sections: (string | string[])[]): Response {
   const content = sections
@@ -48,7 +52,10 @@ function doc(...sections: (string | string[])[]): Response {
     .trim();
 
   return new Response(content + '\n', {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      ...noIndexHeaders,
+    },
   });
 }
 
@@ -61,7 +68,10 @@ function docMarkdown(...sections: (string | string[])[]): Response {
     .trim();
 
   return new Response(content + '\n', {
-    headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
+    headers: {
+      'Content-Type': 'text/markdown; charset=utf-8',
+      ...noIndexHeaders,
+    },
   });
 }
 

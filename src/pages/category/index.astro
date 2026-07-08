@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { BLOG_CATEGORIES, categoryLabels } from '@/lib/categories';
+
+const title = 'Categories';
+const description = 'Browse posts by people, process, and product.';
+const permalink = Astro.site?.href ? `${Astro.site.href}category/` : '/category/';
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-16">
+        <h1 class="font-heading text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-10xl tracking-tighter pt-4">
+          Categories
+        </h1>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        {BLOG_CATEGORIES.map((category) => (
+          <a
+            href={`/category/${category}/`}
+            class="inline-block rounded-full bg-coolGray-200 px-4 py-2 text-lg text-primary-950 transition hover:bg-coolGray-300 dark:bg-primary-900 dark:text-primary-200 dark:hover:bg-primary-800"
+          >
+            {categoryLabels[category]}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
