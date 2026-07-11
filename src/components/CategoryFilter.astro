@@ -8,18 +8,18 @@ interface Props {
 const { activeCategory = 'all' } = Astro.props;
 
 const activeClasses =
-	'inline-block py-2.5 px-5 text-lg text-white bg-black rounded-full transition duration-100';
+	'inline-block whitespace-nowrap py-2 px-3 text-sm md:py-2.5 md:px-5 md:text-lg text-white bg-black rounded-full transition duration-100';
 const inactiveClasses =
-	'inline-block py-2.5 px-5 text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100';
+	'inline-block whitespace-nowrap py-2 px-3 text-sm md:py-2.5 md:px-5 md:text-lg text-black hover:text-white hover:bg-black rounded-full transition duration-100';
 ---
 
-<ul class="flex -mb-2 flex-wrap items-center mt-8 gap-2">
-	<li>
+<ul class="flex -mb-2 flex-nowrap items-center mt-8 gap-1.5 md:gap-2">
+	<li class="shrink-0">
 		<a class={activeCategory === 'all' ? activeClasses : inactiveClasses} href="/blog/">All</a>
 	</li>
 	{
 		BLOG_CATEGORIES.map((category) => (
-			<li>
+			<li class="shrink-0">
 				<a
 					class={activeCategory === category ? activeClasses : inactiveClasses}
 					href={`/category/${category}/`}
