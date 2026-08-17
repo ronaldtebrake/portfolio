@@ -82,7 +82,7 @@ Skills do not have the same lifecycle.
 
 [Drupal Canvas Tools](https://www.drupal.org/project/canvas_tools) exposes Tool API operations for working with Canvas. Through Drupal's MCP server, an external agent can use those tools.
 
-Then we have [`drupal-canvas/skills`](https://github.com/drupal-canvas/skills), containing Agent Skills for Canvas development, with its own installation path:
+Then we have [drupal-canvas/skills](https://github.com/drupal-canvas/skills), containing Agent Skills for Canvas development, with its own installation path:
 
 ```
 npx skills add drupal-canvas/skills
@@ -184,14 +184,14 @@ The wider ecosystem is developing primitives that overlap strongly with what we 
 2. **Agent Plugins** provide a portable package format, although installation still depends on the agent client.
 3. **ARD** focuses on runtime discovery of Skills, MCP servers, plugins and other capabilities.
 
-None of these provides a complete distribution model today. But together they make me hesitant to build a Drupal-specific resolver while the ecosystem is still working out how these pieces fit together.
+None of these provides a complete distribution model today. But together they make me hesitant to build a Drupal specific resolver while the ecosystem is still working out how these pieces fit together.
 
 For now, I think AI Best Practices should take a simpler approach:
 
 * Keep Drupal Skills standards-compliant and publish them normally.
-* Use existing installation tooling rather than introduce a Drupal-specific installer.
+* Use existing installation tooling rather than introduce a Drupal specific installer.
 * Follow, test and contribute to Skills over MCP, Agent Plugins and discovery standards.
-* Focus our own effort on Drupal-specific problems: what agents should know about Drupal, how we validate that knowledge, and how Core and Contrib can publish capabilities agents can trust.
+* Focus our own effort on Drupal specific problems: what agents should know about Drupal, how we validate that knowledge, and how Core and Contrib can publish capabilities agents can trust.
 
 Surge aimed to get the right Drupal knowledge into the agent at the right moment. At the time, I thought that required Drupal to build an orchestrator in the middle.[^1]
 
