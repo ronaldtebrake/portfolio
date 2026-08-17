@@ -88,9 +88,9 @@ Then we have [`drupal-canvas/skills`](https://github.com/drupal-canvas/skills), 
 npx skills add drupal-canvas/skills
 ```
 
-There is also the [Drupal Canvas Plugin](https://www.drupal.org/project/drupal_canvas_plugin), with Canvas Skills and agents distributed through DevKit and a Claude marketplace.
+A quick google also shows the [Drupal Canvas Plugin](https://www.drupal.org/project/drupal_canvas_plugin), with Canvas Skills and agents distributed through DevKit and a Claude marketplace.
 
-So today a developer may encounter three paths:
+So today a developer may encounter three paths, if not more:
 
 ```
 Canvas Tools
