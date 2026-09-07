@@ -244,7 +244,7 @@ As the specification evolves, I will keep testing.
 
 * [WebMCP side-by-side demo](https://webmcp-demo-sdras.netlify.app/#compare) by Sarah Drasner
 * [WebMCP vs browser control on a Drupal Webform](https://youtu.be/kLbjdkl4DEY)
-* [WebMCP Integration](https://www.drupal.org/project/webmcp_integration)
+* [Drupal Demo - WebMCP Integration](https://www.drupal.org/project/webmcp_integration)
 * [WebMCP specification](https://webmachinelearning.github.io/webmcp/)
 * [WebMCP declarative API explainer](https://github.com/webmachinelearning/webmcp/blob/main/declarative-api-explainer.md)
 * [WebMCP on Chrome for Developers](https://developer.chrome.com/blog/webmcp-epp)

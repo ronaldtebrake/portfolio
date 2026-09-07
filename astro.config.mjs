@@ -10,6 +10,7 @@ import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 import mermaid from 'astro-mermaid';
+import { rehypeBlogImages } from './src/plugins/rehype-blog-images.js';
 
 import playformCompress from "@playform/compress";
 
@@ -48,6 +49,9 @@ function shouldExcludeFromSitemap(page) {
 export default defineConfig({
   site: 'https://www.ronaldtebrake.nl/',
   trailingSlash: 'always',
+  markdown: {
+    rehypePlugins: [rehypeBlogImages],
+  },
   integrations: [
     mdx(),
     sitemap({

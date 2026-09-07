@@ -119,19 +119,19 @@ Here’s a concrete example that highlights the problem and the impact of versio
 
 In Drupal `11.2.x` [New hook_entity_duplicate() and hook_ENTITY_TYPE_duplicate() hooks](https://www.drupal.org/node/3268812) were introduced. When asking an AI assistant about entity duplication behavior, the correct answer depends entirely on whether those hooks exist in the current Drupal version.
 
-[![Drupal 10 without MCP](./assets/D10-withoutMCP-small.png)](/images/blog/D10-withoutMCP.png)
+![Drupal 10 without MCP](/images/blog/D10-withoutMCP.png)
 
 *Drupal 10 - without MCP usage:*
 
 The AI suggests the actual hooks that do not exist in Drupal 10. The answer sounds plausible, but it is based on newer APIs and therefore incorrect for this project.
 
-[![Drupal 10 with MCP](./assets/D10-withMCP-small.png)](/images/blog/D10-withMCP.png)
+![Drupal 10 with MCP](/images/blog/D10-withMCP.png)
 
 *Drupal 10 With MCP:*
 
 With MCP enabled, the AI has access to Drupal 10–specific API documentation. The response correctly avoids the new hooks and instead references APIs that actually exist in this version.
 
-[![Drupal 11 with MCP](./assets/D11-withMCP-small.png)](/images/blog/D11-withMCP.png)
+![Drupal 11 with MCP](/images/blog/D11-withMCP.png)
 
 *Drupal 11 With MCP:*
 

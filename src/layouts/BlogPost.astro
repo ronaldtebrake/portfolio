@@ -110,4 +110,105 @@ const jsonLd = {
 			</article>
 		</div>
 	</div>
+	<div
+		id="blog-image-lightbox"
+		class="blog-image-lightbox"
+		hidden
+		role="dialog"
+		aria-modal="true"
+		aria-label="Full size image"
+		tabindex="-1"
+	>
+		<button type="button" class="blog-image-lightbox-close" aria-label="Close full size image">
+			&times;
+		</button>
+		<img class="blog-image-lightbox-img" alt="" decoding="async" />
+	</div>
+	<script is:inline>
+		function initBlogImageLightbox() {
+			const lightbox = document.getElementById('blog-image-lightbox');
+			const lightboxImg = lightbox?.querySelector('.blog-image-lightbox-img');
+			const closeButton = lightbox?.querySelector('.blog-image-lightbox-close');
+			if (!lightbox || !lightboxImg || !closeButton) return;
+
+			document.body.appendChild(lightbox);
+
+			let lastTrigger = null;
+
+			function lightboxSrcFromImg(img) {
+				const src = img.currentSrc || img.src;
+				if (!src) return '';
+
+				try {
+					const url = new URL(src, window.location.href);
+
+					if (url.pathname === '/_image/') {
+						const href = url.searchParams.get('href');
+						if (href) {
+							const decoded = decodeURIComponent(href);
+							const origWidth = decoded.match(/origWidth=(\d+)/)?.[1];
+							if (origWidth) {
+								url.searchParams.set('w', origWidth);
+								url.searchParams.delete('h');
+							}
+						}
+					}
+
+					return url.href;
+				} catch {
+					return src;
+				}
+			}
+
+			function openLightbox(trigger) {
+				const img = trigger.querySelector('img');
+				const src = img ? lightboxSrcFromImg(img) : '';
+				if (!src) return;
+
+				lastTrigger = trigger;
+				lightboxImg.src = src;
+				lightboxImg.alt = img?.alt ?? '';
+				lightbox.removeAttribute('hidden');
+				document.body.style.overflow = 'hidden';
+				closeButton.focus();
+			}
+
+			function closeLightbox() {
+				lightbox.setAttribute('hidden', '');
+				lightboxImg.removeAttribute('src');
+				lightboxImg.alt = '';
+				document.body.style.overflow = '';
+				lastTrigger?.focus();
+				lastTrigger = null;
+			}
+
+			document.addEventListener('click', (event) => {
+				const trigger = event.target.closest('article .blog-image-link');
+				if (!trigger) return;
+
+				event.preventDefault();
+				openLightbox(trigger);
+			});
+
+			closeButton.addEventListener('click', closeLightbox);
+
+			lightbox.addEventListener('click', (event) => {
+				if (event.target === lightbox) {
+					closeLightbox();
+				}
+			});
+
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape' && !lightbox.hasAttribute('hidden')) {
+					closeLightbox();
+				}
+			});
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initBlogImageLightbox);
+		} else {
+			initBlogImageLightbox();
+		}
+	</script>
 </BaseLayout>
