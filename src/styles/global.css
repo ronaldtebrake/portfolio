@@ -56,6 +56,15 @@
 code {
   font-family: monospace;
 }
+
+/* Wide breakout for interactive embeds inside narrow blog prose */
+.blog-embed-wide {
+  position: relative;
+  left: 50%;
+  width: min(100vw - 3rem, 72rem);
+  max-width: 72rem;
+  transform: translateX(-50%);
+}
 p > code,
 li > code,
 dd > code,
