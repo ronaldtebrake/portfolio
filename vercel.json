@@ -1,5 +1,17 @@
 {
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/blog/webmcp-and-drupal-where-does-it-fit-next-to-mcp-server",
+      "destination": "/blog/webmcp-and-drupal/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/webmcp-and-drupal-where-does-it-fit-next-to-mcp-server/",
+      "destination": "/blog/webmcp-and-drupal/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/llms/(.*)",

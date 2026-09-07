@@ -9,7 +9,7 @@ heroImageCredit:
   url: "https://www.pexels.com/photo/notebook-beside-the-iphone-on-table-196644/"
 category: "product"
 tags: ["drupal", "ai", "webmcp", "mcp", "tool-api", "browser-agents", "forms", "proof-of-concept"]
-featured: false
+featured: true
 ---
 
 I started reading about WebMCP because I wanted to understand how it relates to the MCP work already happening in Drupal.
@@ -151,11 +151,11 @@ Views felt like a good first place to try this.
 
 Site builders already use Views to create lists and search pages, including the exposed filters visitors can interact with. That makes those exposed forms a natural place to let a site builder opt into WebMCP.
 
-![Views exposed form options with browser agent assistance enabled](./assets/webmcp-views-configuration.png)
+![Views exposed form options with browser agent assistance enabled](/images/blog/webmcp-views-configuration.jpg)
 
 On the content overview View, I enable browser agent assistance in the exposed form options. The site builder sets a tool name and description — `search_content` and "Help filtering the search content page" in this case — without touching WebMCP attributes or JavaScript.
 
-![Content overview with the WebMCP Model Context Tool Inspector showing the search_content tool](./assets/webmcp-views-exposed-form-browser-extension.png)
+![Content overview with the WebMCP Model Context Tool Inspector showing the search_content tool](/images/blog/webmcp-views-exposed-form-browser-extension.jpg)
 
 On the same page, the [Model Context Tool Inspector](https://github.com/beaufortfrancois/model-context-tool-inspector) extension shows the structured tool the browser picked up: the filter fields, their types, and the current values. That is enough to verify the integration works before handing it to an agent.
 

@@ -75,8 +75,11 @@ article.format > pre {
 
 .blog-embed-wide img,
 .blog-image-link img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  margin-inline: auto;
   border-radius: 1rem;
 }
 

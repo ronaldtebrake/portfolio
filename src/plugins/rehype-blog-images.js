@@ -13,6 +13,11 @@ function isOnlyImageChild(parent, img) {
 }
 
 function imageTrigger(img, alt) {
+  const src = img.properties?.src;
+  if (typeof src === 'string' && src.length > 0) {
+    img.properties['data-full-src'] = src;
+  }
+
   return {
     type: 'element',
     tagName: 'button',

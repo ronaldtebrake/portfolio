@@ -136,6 +136,9 @@ const jsonLd = {
 			let lastTrigger = null;
 
 			function lightboxSrcFromImg(img) {
+				const fullSrc = img.getAttribute('data-full-src');
+				if (fullSrc) return fullSrc;
+
 				const src = img.currentSrc || img.src;
 				if (!src) return '';
 

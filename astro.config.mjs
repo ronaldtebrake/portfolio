@@ -49,6 +49,14 @@ function shouldExcludeFromSitemap(page) {
 export default defineConfig({
   site: 'https://www.ronaldtebrake.nl/',
   trailingSlash: 'always',
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      },
+    },
+  },
   markdown: {
     rehypePlugins: [rehypeBlogImages],
   },
