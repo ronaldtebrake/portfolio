@@ -2,9 +2,9 @@ import { defineConfig } from 'astro/config';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
 import serviceWorker from "astrojs-service-worker";
 import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
@@ -49,6 +49,7 @@ function shouldExcludeFromSitemap(page) {
 export default defineConfig({
   site: 'https://www.ronaldtebrake.nl/',
   trailingSlash: 'always',
+  compressHTML: true,
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
@@ -58,7 +59,9 @@ export default defineConfig({
     },
   },
   markdown: {
-    rehypePlugins: [rehypeBlogImages],
+    processor: unified({
+      rehypePlugins: [rehypeBlogImages],
+    }),
   },
   integrations: [
     mdx(),
@@ -73,7 +76,6 @@ export default defineConfig({
         return item;
       },
     }),
-    tailwind(),
     compress(),
     robotsTxt({
       policy: [

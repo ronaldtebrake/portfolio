@@ -10,7 +10,7 @@ export default async () => {
     ...post,
     data: {
       ...post.data,
-      ogImage: `${SITE_URL}og/${post.slug}.png`,
+      ogImage: `${SITE_URL}og/${post.id}.png`,
     },
   }));
 };

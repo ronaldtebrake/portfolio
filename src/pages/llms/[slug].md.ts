@@ -6,7 +6,7 @@ import { llmsPost } from '@/utils/llms';
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 };
@@ -15,6 +15,6 @@ export const GET: APIRoute = ({ props }) => {
   return llmsPost({
     post: props.post,
     site: SITE_URL,
-    link: `/blog/${props.post.slug}/`,
+    link: `/blog/${props.post.id}/`,
   });
 };

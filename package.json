@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -15,19 +15,21 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.13.0",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/markdown-satteri": "^0.4.1",
+    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
     "@playform/compress": "^0.1.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/alpinejs": "^3.13.2",
     "@vercel/og": "^0.6.1",
     "alpinejs": "^3.13.0",
-    "astro": "^5.16.5",
+    "astro": "^7.3.2",
     "astro-compress": "^2.0.15",
-    "astro-mermaid": "^1.2.0",
-    "astro-og-canvas": "^0.7.2",
+    "astro-mermaid": "^2.1.0",
+    "@mermaid-js/layout-elk": "^0.2.0",
+    "astro-og-canvas": "^0.13.1",
     "astro-robots-txt": "^1.0.0",
     "astro-webmanifest": "^1.0.0",
     "astrojs-service-worker": "^2.0.0",
@@ -37,6 +39,7 @@
     "typed.js": "^2.0.16"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "@tailwindcss/typography": "^0.5.8",
     "@types/jquery": "^3.5.29",
     "tailwindcss-3d": "^1.0.1"

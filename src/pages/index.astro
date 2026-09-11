@@ -43,13 +43,12 @@ const posts = (await getCollection('blog')).sort(
           <div class="flex flex-wrap -mx-4">
             {
               posts.map((post, index) => index < 2 && (
-                  <BlogPostSmallTeaser url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category} heroImage={post.data.heroImage} description={post.data.description} />
+                  <BlogPostSmallTeaser url={`/blog/${post.id}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category} heroImage={post.data.heroImage} description={post.data.description} />
               ))
             }
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
 </BaseLayout>

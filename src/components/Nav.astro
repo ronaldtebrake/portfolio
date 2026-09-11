@@ -111,7 +111,7 @@ const featuredPost = (await getCollection('blog', ({ data }) => data.featured ==
     <div class="grid grid-cols-1 gap-16 pt-6 sm:pb-6 lg:pb-24 lg:grid-cols-2 lg:pt-12" id="links">
       {
         featuredPost && (
-          <FeaturedPost url={`/blog/${featuredPost.slug}/`} title={featuredPost.data.title} pubDate={featuredPost.data.pubDate} description={featuredPost.data.description} category={featuredPost.data.category} heroImage={featuredPost.data.heroImage} />
+          <FeaturedPost url={`/blog/${featuredPost.id}/`} title={featuredPost.data.title} pubDate={featuredPost.data.pubDate} description={featuredPost.data.description} category={featuredPost.data.category} heroImage={featuredPost.data.heroImage} />
         )
       }  
 

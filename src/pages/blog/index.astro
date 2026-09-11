@@ -27,7 +27,7 @@ const posts = (await getCollection('blog')).sort(
       <div>
       {
         posts.map((post) => (
-          <BlogPostTeaser url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category} heroImage={post.data.heroImage} description={post.data.description} />
+          <BlogPostTeaser url={`/blog/${post.id}/`} title={post.data.title} pubDate={post.data.pubDate} category={post.data.category} heroImage={post.data.heroImage} description={post.data.description} />
         ))
       }
       </div>

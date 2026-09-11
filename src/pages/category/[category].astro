@@ -45,7 +45,7 @@ const permalink = Astro.site?.href
         {filteredPosts.length > 0 ? (
           filteredPosts.map((post) => (
             <BlogPostTeaser
-              url={`/blog/${post.slug}/`}
+              url={`/blog/${post.id}/`}
               title={post.data.title}
               pubDate={post.data.pubDate}
               category={post.data.category}

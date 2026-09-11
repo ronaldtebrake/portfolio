@@ -1,97 +1,78 @@
 {
-  "$ref": "#/definitions/blog",
-  "definitions": {
-    "blog": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "pubDate": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ]
+    },
+    "updatedDate": {
+      "type": "string"
+    },
+    "heroImage": {
+      "type": "string"
+    },
+    "heroImageAlt": {
+      "type": "string"
+    },
+    "heroImageCredit": {
       "type": "object",
       "properties": {
-        "title": {
+        "photoBy": {
           "type": "string"
         },
-        "description": {
-          "type": "string"
-        },
-        "pubDate": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "string",
-                  "format": "date"
-                },
-                {
-                  "type": "integer",
-                  "format": "unix-time"
-                }
-              ]
-            }
-          ]
-        },
-        "updatedDate": {
-          "type": "string"
-        },
-        "heroImage": {
-          "type": "string"
-        },
-        "heroImageAlt": {
-          "type": "string"
-        },
-        "heroImageCredit": {
-          "type": "object",
-          "properties": {
-            "photoBy": {
-              "type": "string"
-            },
-            "url": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "required": [
-            "photoBy",
-            "url"
-          ],
-          "additionalProperties": false
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "category": {
+        "url": {
           "type": "string",
-          "enum": [
-            "product",
-            "people",
-            "process"
-          ]
-        },
-        "featured": {
-          "type": "boolean",
-          "default": false
-        },
-        "ogImage": {
-          "type": "string"
-        },
-        "$schema": {
-          "type": "string"
+          "format": "uri"
         }
       },
       "required": [
-        "title",
-        "description",
-        "pubDate",
-        "category"
-      ],
-      "additionalProperties": false
+        "photoBy",
+        "url"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "product",
+        "people",
+        "process"
+      ]
+    },
+    "featured": {
+      "default": false,
+      "type": "boolean"
+    },
+    "ogImage": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "description",
+    "pubDate",
+    "category"
+  ]
 }
