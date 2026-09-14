@@ -46,6 +46,23 @@ function shouldExcludeFromSitemap(page) {
   return page.includes('/goodies') || page.includes('/snippets');
 }
 
+function sitemapXmlAlias() {
+  return {
+    name: 'sitemap-xml-alias',
+    hooks: {
+      'astro:build:done': ({ dir }) => {
+        const dist = fileURLToPath(dir);
+        const source = path.join(dist, 'sitemap-0.xml');
+        const dest = path.join(dist, 'sitemap.xml');
+
+        if (fs.existsSync(source)) {
+          fs.copyFileSync(source, dest);
+        }
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: 'https://www.ronaldtebrake.nl/',
   trailingSlash: 'always',
@@ -78,6 +95,7 @@ export default defineConfig({
     }),
     compress(),
     robotsTxt({
+      sitemap: 'https://www.ronaldtebrake.nl/sitemap.xml',
       policy: [
         {
           userAgent: '*',
@@ -106,7 +124,8 @@ export default defineConfig({
     mermaid({
       theme: 'forest',
       autoTheme: true
-    })
+    }),
+    sitemapXmlAlias(),
   ],
   prefetch: {
     prefetchAll: true
