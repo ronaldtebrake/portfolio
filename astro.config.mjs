@@ -93,7 +93,9 @@ export default defineConfig({
         return item;
       },
     }),
-    compress(),
+    compress({
+      CSS: false,
+    }),
     robotsTxt({
       sitemap: 'https://www.ronaldtebrake.nl/sitemap.xml',
       policy: [
@@ -120,7 +122,9 @@ export default defineConfig({
       background_color: '#F7F7F7',
       display: 'standalone',
     }),
-    playformCompress(),
+    playformCompress({
+      CSS: false,
+    }),
     mermaid({
       theme: 'forest',
       autoTheme: true
