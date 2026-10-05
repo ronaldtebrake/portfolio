@@ -6,12 +6,10 @@ import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import serviceWorker from "astrojs-service-worker";
-import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 import mermaid from 'astro-mermaid';
 import { rehypeBlogImages } from './src/plugins/rehype-blog-images.js';
-
 import playformCompress from "@playform/compress";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
@@ -93,9 +91,6 @@ export default defineConfig({
         return item;
       },
     }),
-    compress({
-      CSS: false,
-    }),
     robotsTxt({
       sitemap: 'https://www.ronaldtebrake.nl/sitemap.xml',
       policy: [
@@ -122,14 +117,20 @@ export default defineConfig({
       background_color: '#F7F7F7',
       display: 'standalone',
     }),
-    playformCompress({
-      CSS: false,
-    }),
     mermaid({
       theme: 'forest',
       autoTheme: true
     }),
     sitemapXmlAlias(),
+    playformCompress({
+      CSS: {
+        csso: false,
+        lightningcss: {
+          minify: true,
+          sourceMap: false,
+        },
+      },
+    }),
   ],
   prefetch: {
     prefetchAll: true
