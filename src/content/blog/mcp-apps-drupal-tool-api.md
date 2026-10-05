@@ -131,7 +131,13 @@ The agent finds the article and uses Drupal's tool to open the media picker.
 
 Instead of getting five filenames back, I get the actual images. I can compare them, select one, edit the article-specific alt text and compare the current hero with the proposed one.
 
-When I am happy with the result, the app calls the save tool through MCP again. Drupal creates a new unpublished revision and keeps the normal content and access checks in place.
+When I confirm the change, the interesting part is what happens back in Drupal.
+
+The hero update itself now composes existing Tool Belt tools through Tool API. It uses the field tools to update the Media reference and alt text, the revision tool to create a new revision, and the save tool to persist it.
+
+So even inside this small demo, the MCP App is not introducing another way to edit Drupal content. It is calling a workflow that reuses the same generic Drupal tools that can be used from other Tool API consumers as well.
+
+Each Tool Belt operation still runs its own access check, while the small hero workflow keeps the checks that are specific to this interaction, such as only allowing draft content and making sure the selected Media is accessible.
 
 So the flow becomes:
 
@@ -148,12 +154,16 @@ ui://drupal/media-picker
     ↓
 I choose the image
     ↓
-MCP App calls the save tool
+Hero update workflow
+    ↓
+Tool Belt tools
     ↓
 Drupal creates the new revision
 ```
 
-Drupal still owns the article, Media entities, revisions, access checks and the operations themselves. The agent handles the conversation and tool calls, while the MCP App adds the visual interaction needed to make the choice.
+That is probably my favourite part of the demo.
+
+The MCP App adds the visual interaction. Tool API gives us the reusable operations. Tool Belt already provides much of the Drupal content logic we need. Drupal still owns the content, revisions and access checks.
 
 ## Contributing back
 
