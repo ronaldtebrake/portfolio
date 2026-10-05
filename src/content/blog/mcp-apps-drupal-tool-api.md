@@ -116,7 +116,7 @@ That is exactly what I wanted to test.
 You can find the code over at [ronaldtebrake/drupal_mcp_apps](https://github.com/ronaldtebrake/drupal_mcp_apps).
 
 <div class="not-prose blog-embed-wide my-10">
-<iframe width="100%" height="720" src="https://www.youtube.com/embed/7sDNkDkiGE4" title="Updating a Drupal hero image through Tool API, MCP Server and an MCP App" loading="lazy" style="border: 0; border-radius: 1rem; min-height: 720px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="720" src="https://www.youtube.com/embed/7CX6Ovw0PAM" title="Updating a Drupal hero image through Tool API, MCP Server and an MCP App" loading="lazy" style="border: 0; border-radius: 1rem; min-height: 720px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <p><em>Recording of the Codex demo: the agent finds the article, the MCP App shows the matching images, and Drupal saves a new unpublished revision.</em></p>
@@ -207,7 +207,7 @@ That also makes the goals of the Rosetta Sprint feel much more tangible to me, a
 * [MCP Apps protocol overview](https://apps.extensions.modelcontextprotocol.io/api/documents/overview.html)
 * [PHP MCP SDK extensions](https://github.com/modelcontextprotocol/php-sdk/blob/main/docs/extensions.md)
 * [Drupal MCP Apps demo](https://github.com/ronaldtebrake/drupal_mcp_apps)
-* [Updating a Drupal hero image through Tool API, MCP Server and an MCP App](https://youtu.be/7sDNkDkiGE4)
+* [Updating a Drupal hero image through Tool API, MCP Server and an MCP App](https://youtu.be/7CX6Ovw0PAM)
 * [Agent Access](https://www.drupal.org/project/agent_access)
 * [DriesNote Rotterdam](https://www.drupal.org/blog/driesnote-rotterdam)
 * [Drupal AI after the DriesNote: what you can use today and what comes next](https://www.drupal.org/about/ai/initiatives/blog/drupal-ai-after-the-driesnote-rotterdam-what-you-can-use-today-and-what-comes-next)
